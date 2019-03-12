@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Employee from '../Employee/Employee';
+import ManagerList from '../Manager/ManagerList'
+import ManagerCreate from '../Manager/ManagerCreate';
 
 class App extends Component {
 
@@ -7,6 +9,8 @@ class App extends Component {
     return (
       <div>
         <Employee />
+        <ManagerList />
+        <ManagerCreate />
       </div>
     );
   }
