@@ -22,7 +22,7 @@ class WeeklyAvailability extends Component {
             // const obj = JSON.parse(item.mon_am)
             // console.log(obj)
             return (
-                <div key={item.id} className='weekly-availability-container'>
+                <div key={item.id}>
                     <p>Employee Number: {item.employee}</p>
                     <ul>
                         <li>Mon AM: <span className='bold-span'> {item.mon_am}</span></li>
@@ -52,9 +52,8 @@ class WeeklyAvailability extends Component {
         })
         return (
 
-            <div>
+            <div className='weekly-availability-container'>
                 {weeklyAvailability}
-                {/* <ul><li>Mon AM: {obj.mon_am}</li></ul> */}
                 <h2>Hello from weeklyAvailability component</h2>
             </div>
         );
