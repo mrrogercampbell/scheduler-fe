@@ -53,8 +53,8 @@ class WeeklyAvailability extends Component {
         return (
 
             <div className='weekly-availability-container'>
-                {weeklyAvailability}
                 <h2>Hello from weeklyAvailability component</h2>
+                {weeklyAvailability}
             </div>
         );
     }

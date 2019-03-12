@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Employee from '../Employee/Employee';
 import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
+import Unavailability from '../Unavailability/Unavailability'
 
 class App extends Component {
 
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <Employee />
         <WeeklyAvailability />
+        <Unavailability />
       </div>
     );
   }

@@ -27,8 +27,8 @@ class Employee extends Component {
         })
         return (
             <div className='employee-container'>
-                {employees}
                 <h2>Hello from employees component</h2>
+                {employees}
             </div>
         );
     }
