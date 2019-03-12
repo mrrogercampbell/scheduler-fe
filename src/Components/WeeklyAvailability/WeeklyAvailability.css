@@ -1,0 +1,10 @@
+.weekly-availability-container{
+    border: solid orange 5px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.bold-span{
+    font-weight: bold;
+}
+
