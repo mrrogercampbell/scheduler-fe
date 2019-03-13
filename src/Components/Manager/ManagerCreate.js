@@ -21,7 +21,6 @@ class ManagerCreate extends Component {
     onSubmit = e => {
         e.preventDefault();
         console.log("Manager has been created");
-    
         axios.post("http://localhost:8000/api/managers", this.state).then(result => {
           console.log(result)
           this.props.history.push("/managers");
