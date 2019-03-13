@@ -8,3 +8,9 @@
     font-weight: bold;
 }
 
+
+.weekly-availability-create-form{
+    border: solid grey 5px;
+    margin: 5px;
+    padding: 10px;
+}
