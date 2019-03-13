@@ -31,7 +31,7 @@ class ManagerUpdate extends Component {
         this.setState({ manager: state });
     }
 
-    onSubmit = (e)=> {
+    onSubmit =(e)=> {
         console.log("update submitting")
         e.preventDefault();
         const { full_name, position, photo_url } = this.state.manager

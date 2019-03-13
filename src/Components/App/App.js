@@ -6,6 +6,7 @@ import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
 import Unavailability from '../Unavailability/Unavailability'
 import ManagerUpdate from '../Manager/ManagerUpdate';
 import { Route, Link } from "react-router-dom";
+import ManagerDetails from '../Manager/ManagerDetails';
 
 class App extends Component {
 
@@ -21,12 +22,19 @@ class App extends Component {
           <Link to="/employees">
             <h2 className="nav-link active">Employee Roster</h2>
           </Link>
-          <br />
 
-          <Link to="/employees/new">
+          <Link to="/employee/new">
             <h2 className="nav-link active">Add Employee</h2>
           </Link>
-          <br />
+
+          <Link to="/managers">
+            <h2 className="nav-link active">Managers</h2>
+          </Link>
+
+          <Link to="/manager/new">
+            <h2 className="nav-link active">Add Manager</h2>
+          </Link>
+
         </nav>
 
         <main>
@@ -41,6 +49,9 @@ class App extends Component {
 
           <Route
             exact path="/manager/edit/:id" render={routerProps => <ManagerUpdate {...routerProps} />} />
+
+          <Route
+            exact path="/manager/:id" render={routerProps => <ManagerDetails {...routerProps} />} />
 
           <Route
             exact path="/managers" render={routerProps => <ManagerList {...routerProps} />} />

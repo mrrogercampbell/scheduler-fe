@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 class ManagerList extends Component {
     constructor (props) {
@@ -18,7 +19,7 @@ class ManagerList extends Component {
     render() {
         let managers = this.state.managers.map((item, i) => {
             return <h2 className='managers-manager' key={i}>
-              <p>Name: {item.full_name}</p>
+              <Link to={'/manager/' + item.id}><p>Name: {item.full_name}</p></Link>
               <p>Position: {item.position}</p>
               <p>Photo: <img src={item.photo_url}></img></p>
             </h2>

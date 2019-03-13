@@ -15,12 +15,11 @@ class ManagerCreate extends Component {
 
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value });
-        console.log(this.state);
     };
 
     onSubmit = e => {
         e.preventDefault();
-        console.log("Manager has been created");
+        // this is throwing a 403 - forbidden
         axios.post("http://localhost:8000/api/managers", this.state).then(result => {
           console.log(result)
           this.props.history.push("/managers");
