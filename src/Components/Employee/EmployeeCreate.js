@@ -22,7 +22,7 @@ class EmployeeCreate extends Component {
         e.preventDefault();
         console.log("Employee has been created");
 
-        axios.post("http://localhost:8000/api/employee", this.state).then(result => {
+        axios.post("http://localhost:8000/api/employees", this.state).then(result => {
             console.log(result)
             this.props.history.push("/employee");
         });
