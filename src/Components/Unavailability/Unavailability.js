@@ -7,7 +7,7 @@ class Unavailability extends Component {
         unavailability: [],
     };
 
-    async componentDidMount() {
+    componentDidMount() {
         axios.get('http://localhost:8000/api/unavailability')
             .then((item) => {
                 console.log(item)
