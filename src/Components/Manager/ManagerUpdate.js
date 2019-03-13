@@ -31,17 +31,17 @@ class ManagerUpdate extends Component {
         this.setState({ manager: state });
     }
 
-    onSubmit = (e) => {
+    onSubmit = (e)=> {
         console.log("update submitting")
         e.preventDefault();
         const { full_name, position, photo_url } = this.state.manager
-        // should I have this as axios.post??
+        // put request throwing 403 - forbidden
         axios.put('http://localhost:8000/api/manager/' + this.props.match.params.id, { full_name, position, photo_url })
-            .then((res) => {
-                console.log(res)
-                // the route to the job show
-                this.props.history.push('/manager/' + this.props.match.params.id)
-            });
+        .then((res) => {
+            console.log(res)
+            this.props.history.push('/manager/' + this.props.match.params.id)
+        });
+        
     }
 
     render() {
