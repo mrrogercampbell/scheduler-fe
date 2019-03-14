@@ -18,6 +18,7 @@ import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
 import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
 import Unavailability from '../Unavailability/Unavailability'
 import UnavailabilityDetails from '../Unavailability/UnavailabilityDetails'
+import UnavailabilityUpdate from '../Unavailability/UnavailabilityUpdate'
 
 
 class App extends Component {
@@ -98,6 +99,9 @@ class App extends Component {
 
             <Route
               exact path="/unavailability" render={routerProps => <Unavailability {...routerProps} />} />
+
+            <Route
+              exact path="/unavailability/edit/:id" render={routerProps => <UnavailabilityUpdate {...routerProps} />} />
 
             <Route
               exact path="/unavailability/:id" render={routerProps => <UnavailabilityDetails {...routerProps} />} />
