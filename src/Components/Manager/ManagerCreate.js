@@ -6,7 +6,7 @@ class ManagerCreate extends Component {
         super();
         this.state = {
         full_name: "",
-        position: "",
+        // position: "",
         photo_url: ""
         };
         this.onChange = this.onChange.bind(this);
@@ -19,8 +19,7 @@ class ManagerCreate extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        // this is throwing a 403 - forbidden
-        axios.post("http://localhost:8000/api/managers", this.state).then(result => {
+        axios.post('http://localhost:8000/api/managers', this.state).then(result => {
           console.log(result)
           this.props.history.push("/managers");
         });
