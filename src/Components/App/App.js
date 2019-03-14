@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
+import { Route, Link, Switch } from "react-router-dom";
+
+
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
 import EmployeeUpdate from '../Employee/EmployeeUpdate'
 import EmployeeDetails from '../Employee/EmployeeDetails'
-import ManagerList from '../Manager/ManagerList'
+
 import ManagerCreate from '../Manager/ManagerCreate';
-import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
-import Unavailability from '../Unavailability/Unavailability'
-import ManagerUpdate from '../Manager/ManagerUpdate';
-import { Route, Link, Switch } from "react-router-dom";
+import ManagerList from '../Manager/ManagerList'
 import ManagerDetails from '../Manager/ManagerDetails';
-import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
+import ManagerUpdate from '../Manager/ManagerUpdate';
+
 import WeeklyAvailabilityCreate from '../WeeklyAvailability/WeeklyAvailabilityCreate';
+import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
+
+import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
+import Unavailability from '../Unavailability/Unavailability'
+
 
 class App extends Component {
 
