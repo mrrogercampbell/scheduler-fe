@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 import './Unavailability.css'
+
 
 class Unavailability extends Component {
     state = {
@@ -19,7 +21,7 @@ class Unavailability extends Component {
         const unavailability = this.state.unavailability.map(item => {
             return (
                 <div key={item.id}>
-                    <p>Date: {item.date}</p>
+                    <Link to={'/unavailability/' + item.id}><p>Date: {item.date}</p></Link>
                     <p>Employee Number: {item.employee}</p>
                     <ul>
                         <li>Morning: {item.am}</li>
