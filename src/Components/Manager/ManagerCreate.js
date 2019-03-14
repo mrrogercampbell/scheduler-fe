@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+// import { error } from 'util';
 
 class ManagerCreate extends Component {
   constructor() {
@@ -7,7 +8,7 @@ class ManagerCreate extends Component {
     this.state = {
       full_name: "",
       position: "",
-      photo_url: ""
+      photo_url: "",
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -16,15 +17,20 @@ class ManagerCreate extends Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
     console.log(this.state);
+    // console.log(this.state.position);
+    // console.log(this.state.full_name);
+    // console.log(this.state.photo_url);
   };
 
   onSubmit = e => {
     e.preventDefault();
-    console.log(this.state)
+    // console.log(this.state)
     axios.post('http://localhost:8000/api/managers', this.state).then(result => {
       console.log(result)
       this.props.history.push("/managers");
-    });
+    }).catch((error) => {
+      console.log(error)
+    })
   };
 
   render() {
@@ -41,9 +47,9 @@ class ManagerCreate extends Component {
         <br />
         <label>Position: </label>
         <select name="position" value={position} onChange={this.onChange}>
-          <option name="position" value='Manager'>Manager</option>
-          <option name="position" value='General Manager'>General Manager</option>
-          <option name="position" value="Assistant Manager">Assistant Manager</option>
+          <option name="position" value='manager'>Manager</option>
+          <option name="position" value='general_manager'>General Manager</option>
+          <option name="position" value="assistant_manager">Assistant Manager</option>
         </select>
         <br />
         <label>Photo URL:</label>
