@@ -15,10 +15,12 @@ class ManagerCreate extends Component {
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state);
   };
 
   onSubmit = e => {
     e.preventDefault();
+    console.log(this.state)
     axios.post('http://localhost:8000/api/managers', this.state).then(result => {
       console.log(result)
       this.props.history.push("/managers");
@@ -38,10 +40,10 @@ class ManagerCreate extends Component {
         />
         <br />
         <label>Position: </label>
-        <select value={this.state.position.value} onChange={this.onChange}>
-          <option name='position' value='Manager'>Manager</option>
-          <option name='position' value='General Manager'>General Manager</option>
-          <option name='position' value="Assistant Manager">Assistant Manager</option>
+        <select name="position" value={position} onChange={this.onChange}>
+          <option name="position" value='Manager'>Manager</option>
+          <option name="position" value='General Manager'>General Manager</option>
+          <option name="position" value="Assistant Manager">Assistant Manager</option>
         </select>
         <br />
         <label>Photo URL:</label>
