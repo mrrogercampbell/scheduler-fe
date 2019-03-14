@@ -10,6 +10,8 @@ import { Route, Link, Switch } from "react-router-dom";
 import ManagerDetails from '../Manager/ManagerDetails';
 import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
 import WeeklyAvailabilityCreate from '../WeeklyAvailability/WeeklyAvailabilityCreate';
+import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
+import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 
 class App extends Component {
 
@@ -53,6 +55,14 @@ class App extends Component {
           <Link to="/availability/new">
             <h2 className="nav-link active">Create Weekly Availability</h2>
           </Link>
+
+          <Link to="/shiftschedules">
+            <h2 className="nav-link active">Shift Schedules List</h2>
+          </Link>
+
+          <Link to="/shiftsched/new">
+            <h2 className="nav-link active">Schedule A Shift</h2>
+          </Link>
         </nav>
 
         <main>
@@ -89,6 +99,12 @@ class App extends Component {
 
           <Route
             exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
+
+          <Route
+            exact path="/shiftsched/new" render={routerProps => <ShiftSchedCreate {...routerProps} />} />
+
+          <Route
+            exact path="/shiftschedules" render={routerProps => <ShiftSchedList {...routerProps} />} />
           </Switch>
         </main>
       </div>
