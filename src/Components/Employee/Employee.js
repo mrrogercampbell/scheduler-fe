@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './Employee.css'
 class Employee extends Component {
     state = {
@@ -21,7 +22,9 @@ class Employee extends Component {
         const employees = this.state.employees.map(item => {
             return (
                 <div key={item.id}>
-                    <h1>Employee Name: {item.full_name}</h1>
+                    <Link to={'employee/' + item.id}> <h1>Employee Name: {item.full_name}</h1></Link>
+                    <p>Position: {item.position}</p>
+                    <p>Photo: <img src={item.photo_url} alt={item.full_name}></img></p>
                 </div>
             )
         })

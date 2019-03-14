@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
+import EmployeeUpdate from '../Employee/EmployeeUpdate'
 import ManagerList from '../Manager/ManagerList'
 import ManagerCreate from '../Manager/ManagerCreate';
 import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
@@ -57,38 +58,41 @@ class App extends Component {
 
         <main>
           <Switch>
-          {/* <Route
+            {/* <Route
             exact path="/employee/:id" render={routerProps => <EmployeeDetail {...routerProps} />} /> */}
 
-          <Route
-            exact path="/employee/new" render={routerProps => <EmployeeCreate {...routerProps} />} />
+            <Route
+              exact path="/employee/new" render={routerProps => <EmployeeCreate {...routerProps} />} />
 
-          <Route
-            exact path="/employees" render={routerProps => <Employee {...routerProps} />} />
+            <Route
+              exact path="/employees" render={routerProps => <Employee {...routerProps} />} />
 
-          <Route
-            exact path="/manager/new" render={routerProps => <ManagerCreate {...routerProps} />} />
+            <Route
+              exact path="/employee/edit/:id" render={routerProps => <EmployeeUpdate {...routerProps} />} />
 
-          <Route
-            exact path="/manager/edit/:id" render={routerProps => <ManagerUpdate {...routerProps} />} />
+            <Route
+              exact path="/manager/new" render={routerProps => <ManagerCreate {...routerProps} />} />
 
-          <Route
-            exact path="/manager/:id" render={routerProps => <ManagerDetails {...routerProps} />} />
+            <Route
+              exact path="/manager/edit/:id" render={routerProps => <ManagerUpdate {...routerProps} />} />
 
-          <Route
-            exact path="/managers" render={routerProps => <ManagerList {...routerProps} />} />
+            <Route
+              exact path="/manager/:id" render={routerProps => <ManagerDetails {...routerProps} />} />
 
-          <Route
-            exact path="/unavailability/new" render={routerProps => <UnavailabilityCreate {...routerProps} />} />
+            <Route
+              exact path="/managers" render={routerProps => <ManagerList {...routerProps} />} />
 
-          <Route
-            exact path="/unavailability" render={routerProps => <Unavailability {...routerProps} />} />
+            <Route
+              exact path="/unavailability/new" render={routerProps => <UnavailabilityCreate {...routerProps} />} />
 
-          <Route
-            exact path="/availability/new" render={routerProps => <WeeklyAvailabilityCreate {...routerProps} />} />
+            <Route
+              exact path="/unavailability" render={routerProps => <Unavailability {...routerProps} />} />
 
-          <Route
-            exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
+            <Route
+              exact path="/availability/new" render={routerProps => <WeeklyAvailabilityCreate {...routerProps} />} />
+
+            <Route
+              exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
           </Switch>
         </main>
       </div>
