@@ -41,7 +41,7 @@ class ManagerCreate extends Component {
             />
             <br />
             <label>Position: </label>
-            <select value={.position} onChange={this.onChange}>
+            <select value={position} onChange={this.onChange}>
                 <option name='position' value='Manager'>Manager</option>
                 <option name='position' value='General Manager'>General Manager</option>
                 <option name='position' value="Assistant Manager">Assistant Manager</option>
