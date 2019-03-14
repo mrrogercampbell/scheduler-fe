@@ -5,10 +5,13 @@ class ManagerCreate extends Component {
     constructor() {
         super();
         this.state = {
-        full_name: "",
-        // position: "",
-        photo_url: ""
-        };
+          newManager: {
+            full_name: "",
+            position: "",
+            photo_url: ""
+          },
+          positionOptions: ['Manager', 'General Manager', 'Assistant Manager']
+        }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -26,7 +29,7 @@ class ManagerCreate extends Component {
       };
 
     render() {
-        const { full_name, position, photo_url } = this.state;
+        const { full_name, position, photo_url } = this.state.newManager;
         return (
             <form onSubmit={this.onSubmit}>
             <label>Full Name:</label>
@@ -38,7 +41,7 @@ class ManagerCreate extends Component {
             />
             <br />
             <label>Position: </label>
-            <select value={position} onChange={this.onChange}>
+            <select value={.position} onChange={this.onChange}>
                 <option name='position' value='Manager'>Manager</option>
                 <option name='position' value='General Manager'>General Manager</option>
                 <option name='position' value="Assistant Manager">Assistant Manager</option>
