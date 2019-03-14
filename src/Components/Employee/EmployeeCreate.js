@@ -9,6 +9,8 @@ class EmployeeCreate extends Component {
             full_name: "",
             position: "",
             photo_url: "",
+            sales: "",
+            rating: "",
         };
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -21,16 +23,17 @@ class EmployeeCreate extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        console.log("Employee has been created");
-
         axios.post("http://localhost:8000/api/employees", this.state).then(result => {
             console.log(result)
-            this.props.history.push("/employee");
-        });
+            console.log("Employee has been created");
+            this.props.history.push("/employees");
+        }).catch((error) => {
+            console.log(error)
+        })
     };
 
     render() {
-        const { full_name, position, photo_url } = this.state;
+        const { full_name, position, photo_url, sales, rating } = this.state;
         return (
             <div className='employee-create-form'>
                 <h1>New Employee Form:</h1>
@@ -44,10 +47,10 @@ class EmployeeCreate extends Component {
                     />
                     <br />
                     <label>Position: </label>
-                    <select value={position} onChange={this.onChange}>
+                    <select name="position" value={position} onChange={this.onChange}>
                         <option name='position' value='server'>Server</option>
-                        <option name='position' value='General host'>Host</option>
-                        <option name='position' value=" bartender">Bartender</option>
+                        <option name='position' value='host'>Host</option>
+                        <option name='position' value="bartender">Bartender</option>
                     </select>
                     <br />
                     <label>Photo URL:</label>
@@ -55,6 +58,22 @@ class EmployeeCreate extends Component {
                         type="text"
                         name="photo_url"
                         value={photo_url}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Sales:</label>
+                    <input
+                        type="number"
+                        name="sales"
+                        value={sales}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Rating:</label>
+                    <input
+                        type="text"
+                        name="rating"
+                        value={rating}
                         onChange={this.onChange}
                     />
                     <button type="submit">Submit</button>
