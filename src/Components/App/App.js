@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
 import EmployeeUpdate from '../Employee/EmployeeUpdate'
+import EmployeeDetails from '../Employee/EmployeeDetails'
 import ManagerList from '../Manager/ManagerList'
 import ManagerCreate from '../Manager/ManagerCreate';
 import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
@@ -69,6 +70,9 @@ class App extends Component {
 
             <Route
               exact path="/employee/edit/:id" render={routerProps => <EmployeeUpdate {...routerProps} />} />
+
+            <Route
+              exact path="/employee/:id" render={routerProps => <EmployeeDetails {...routerProps} />} />
 
             <Route
               exact path="/manager/new" render={routerProps => <ManagerCreate {...routerProps} />} />

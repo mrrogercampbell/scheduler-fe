@@ -34,9 +34,9 @@ class EmployeeUpdate extends Component {
     onSubmit = (e) => {
         console.log("update submitting")
         e.preventDefault();
-        const { full_name, position, photo_url } = this.state.employee
+        const { full_name, position, photo_url, sales, rating } = this.state.employee
         // put request throwing 403 - forbidden
-        axios.put('http://localhost:8000/api/employee/' + this.props.match.params.id, { full_name, position, photo_url })
+        axios.put('http://localhost:8000/api/employee/' + this.props.match.params.id, { full_name, position, photo_url, sales, rating })
             .then((res) => {
                 console.log(res)
                 this.props.history.push('/employee/' + this.props.match.params.id)
@@ -45,7 +45,7 @@ class EmployeeUpdate extends Component {
     }
 
     render() {
-        const { full_name, position, photo_url } = this.state.employee
+        const { full_name, position, photo_url, sales, rating } = this.state.employee
         return (
 
             <form onSubmit={this.onSubmit}>
@@ -70,6 +70,22 @@ class EmployeeUpdate extends Component {
                     type="text"
                     name="photo_url"
                     value={photo_url}
+                    onChange={this.onChange}
+                />
+                <br />
+                <label>Sales:</label>
+                <input
+                    type="number"
+                    name="sales"
+                    value={sales}
+                    onChange={this.onChange}
+                />
+                <br />
+                <label>Rating:</label>
+                <input
+                    type="text"
+                    name="rating"
+                    value={rating}
                     onChange={this.onChange}
                 />
                 <button type="submit">Submit</button>
