@@ -12,6 +12,8 @@ import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
 import WeeklyAvailabilityCreate from '../WeeklyAvailability/WeeklyAvailabilityCreate';
 import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
+import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
+import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 
 class App extends Component {
 
@@ -60,7 +62,7 @@ class App extends Component {
             <h2 className="nav-link active">Shift Schedules List</h2>
           </Link>
 
-          <Link to="/shiftsched/new">
+          <Link to="/shiftschedule/new">
             <h2 className="nav-link active">Schedule A Shift</h2>
           </Link>
         </nav>
@@ -101,10 +103,16 @@ class App extends Component {
             exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
 
           <Route
-            exact path="/shiftsched/new" render={routerProps => <ShiftSchedCreate {...routerProps} />} />
+            exact path="/shiftschedule/new" render={routerProps => <ShiftSchedCreate {...routerProps} />} />
 
           <Route
             exact path="/shiftschedules" render={routerProps => <ShiftSchedList {...routerProps} />} />
+
+          <Route
+            exact path="/shiftschedule/edit/:id" render={routerProps => <ShiftSchedUpdate {...routerProps} />} />
+
+          <Route
+            exact path="/shiftschedule/:id" render={routerProps => <ShiftSchedDetail {...routerProps} />} />
           </Switch>
         </main>
       </div>
