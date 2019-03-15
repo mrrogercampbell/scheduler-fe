@@ -1,51 +1,57 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-class ShiftSchedCreate extends Component {
-    constructor() {
-        super();
+class ShiftSchedUpdate extends Component {
+    constructor(props) {
+        super(props);
         this.state = {
-        date: '',
-        shift: '',
-        num_of_sections: '',
-        section_red: 1,
-        section_orange: 1,
-        section_yellow: 1,
-        section_green: 1,
-        section_blue: 1,
-        section_purple: 1,
-        employees: []
+            shifts: {},
+            employees: []
         };
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
-    componentDidMount() {
-      axios.get('http://localhost:8000/api/employees').then((response) => {
-        this.setState({
-          employees: response.data
-        })
-      })
-    }
-    onChange = e => {
-        this.setState({ [e.target.name]: e.target.value })
-        console.log(this.state)
-      };
 
-    onSubmit = e => {
-        e.preventDefault()
-        axios.post("http://localhost:8000/api/schedulebyshifts", this.state).then(result => {
-            console.log(result);
-            this.props.history.push("/shiftschedules");
-        });
-    };
+    componentDidMount() {
+        axios.all([
+            axios.get('http://localhost:8000/api/employees'),
+            axios.get('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+        ])
+        .then(axios.spread((empRes, schedRes) => {
+            this.setState({
+                employees: empRes.data,
+                shifts: schedRes.data
+            })
+          }))
+        .catch((err) => {
+            console.log(err)
+        })
+    }
+
+    onChange = (e) => {
+        const state = this.state.shifts
+        state[e.target.name] = e.target.value;
+        this.setState({ shifts: state });
+
+    }
+
+    onSubmit = (e) => {
+        console.log("update submitting")
+        e.preventDefault();
+        const { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple} = this.state.shifts
+        // put request throwing 403 - forbidden
+        axios.put('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id, { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple})
+            .then((res) => {
+                console.log(res)
+                this.props.history.push('/shiftschedule/' + this.props.match.params.id)
+            });
+    }
 
     render() {
-        const { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple } = this.state;
-        let employees = this.state.employees
-        console.log(this.state.employees)
+        const { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple} = this.state.shifts
         return (
-          <form onSubmit={this.onSubmit}>
-            <h2>Schedule A Shift:</h2>
+            <form onSubmit={this.onSubmit}>
+            <h2>Update Shift:</h2>
             <label>Date:</label>
             <input
               type="Date"
@@ -70,42 +76,42 @@ class ShiftSchedCreate extends Component {
             />
             <label>Employee Assigned to RED Section:</label>
             <select name="section_red" value={section_red} onChange={this.onChange}>
-              {employees.map(cv =>
+              {this.state.employees.map(cv =>
                 <option key={cv.id} value={cv.id}>{cv.full_name}</option>
               )}
             </select>
             <br />
             <label>Employee Assigned to ORANGE Section:</label>
             <select name="section_orange" value={section_orange} onChange={this.onChange}>
-              {employees.map(cv =>
+              {this.state.employees.map(cv =>
                 <option key={cv.id} value={cv.id}>{cv.full_name}</option>
               )}
             </select>
             <br />
             <label>Employee Assigned to YELLOW Section:</label>
             <select name="section_yellow" value={section_yellow} onChange={this.onChange}>
-              {employees.map(cv =>
+              {this.state.employees.map(cv =>
                 <option key={cv.id} value={cv.id}>{cv.full_name}</option>
               )}
             </select>
             <br />
             <label>Employee Assigned to GREEN Section:</label>
             <select name="section_green" value={section_green} onChange={this.onChange}>
-              {employees.map(cv =>
+              {this.state.employees.map(cv =>
                 <option key={cv.id} value={cv.id}>{cv.full_name}</option>
               )}
             </select>
             <br />
             <label>Employee Assigned to BLUE Section:</label>
             <select name="section_blue" value={section_blue} onChange={this.onChange}>
-              {employees.map(cv =>
+              {this.state.employees.map(cv =>
                 <option key={cv.id} value={cv.id}>{cv.full_name}</option>
               )}
             </select>
             <br />
             <label>Employee Assigned to PURPLE Section:</label>
             <select name="section_purple" value={section_purple} onChange={this.onChange}>
-              {employees.map(cv =>
+              {this.state.employees.map(cv =>
                 <option key={cv.id} value={cv.id}>{cv.full_name}</option>
               )}
             </select>
@@ -116,5 +122,4 @@ class ShiftSchedCreate extends Component {
     }
 }
 
-export default ShiftSchedCreate;
-
+export default ShiftSchedUpdate;
