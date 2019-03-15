@@ -20,6 +20,7 @@ import Unavailability from '../Unavailability/Unavailability'
 import UnavailabilityDetails from '../Unavailability/UnavailabilityDetails'
 import UnavailabilityUpdate from '../Unavailability/UnavailabilityUpdate'
 
+import DragDrop from '../DragDrop/DragDrop'
 
 class App extends Component {
 
@@ -62,6 +63,10 @@ class App extends Component {
 
           <Link to="/availability/new">
             <h2 className="nav-link active">Create Weekly Availability</h2>
+          </Link>
+
+          <Link to="/dragdrop">
+            <h2 className="nav-link active">DragDrop</h2>
           </Link>
         </nav>
 
@@ -111,6 +116,9 @@ class App extends Component {
 
             <Route
               exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
+
+            <Route
+              exact path="/dragdrop" render={routerProps => <DragDrop {...routerProps} />} />
           </Switch>
         </main>
       </div>
