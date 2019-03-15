@@ -32,6 +32,9 @@ class Employee extends Component {
             <div className='employee-container'>
                 <h2>Hello from employees component</h2>
                 {employees}
+                <Link to="/employee/new">
+                    <h3 className="nav-link active">Add Employee</h3>
+                </Link>
             </div>
         );
     }

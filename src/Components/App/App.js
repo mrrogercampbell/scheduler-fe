@@ -24,6 +24,7 @@ import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
+import Home from '../Home'
 
 class App extends Component {
 
@@ -136,7 +137,7 @@ class App extends Component {
             exact path="/shiftschedule/:id" render={routerProps => <ShiftSchedDetail {...routerProps} />} />
 
           <Route
-            exact path="/" render={routerProps => <Employee {...routerProps} />} />
+            exact path="/" render={routerProps => <Home {...routerProps} />} />
           </Switch>
         </main>
       </div>

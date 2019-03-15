@@ -28,6 +28,9 @@ class ManagerList extends Component {
       <div>
         <h1>Managers:</h1>
         {managers}
+          <Link to="/manager/new">
+            <h3 className="nav-link active">Add Manager</h3>
+          </Link>
       </div>
     );
   }
