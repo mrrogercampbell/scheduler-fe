@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from "react-router-dom";
+import './App.css'
 
 
 import Employee from '../Employee/Employee';
@@ -29,50 +30,52 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Link to="/">
-          <h1 className="nav-link active">Scheduler</h1>
-        </Link>
+
 
         <nav className="nav nav-pills nav-fill nav justify-content-center van">
 
-          <Link to="/employees">
-            <h2 className="nav-link active">Employee Roster</h2>
+          <Link to="/">
+            <h1 className="nav-link active">Scheduler</h1>
           </Link>
 
-          <Link to="/employee/new">
-            <h2 className="nav-link active">Add Employee</h2>
+          <Link to="/employees">
+            <h3 className="nav-link active">Roster</h3>
           </Link>
+
+          {/* <Link to="/employee/new">
+            <h3 className="nav-link active">Add Employee</h3>
+          </Link> */}
 
           <Link to="/managers">
-            <h2 className="nav-link active">Managers</h2>
+            <h3 className="nav-link active">Managers</h3>
           </Link>
 
-          <Link to="/manager/new">
-            <h2 className="nav-link active">Add Manager</h2>
-          </Link>
+          {/* <Link to="/manager/new">
+            <h3 className="nav-link active">Add Manager</h3>
+          </Link> */}
 
-          <Link to="/unavailability">
-            <h2 className="nav-link active">View Time Off Requests</h2>
-          </Link>
+          {/* <Link to="/unavailability">
+            <h3 className="nav-link active">View Time Off Requests</h3>
+          </Link> */}
 
           <Link to="/unavailability/new">
-            <h2 className="nav-link active">Create Time Off Request</h2>
+            <h3 className="nav-link active">+ TO Req</h3>
           </Link>
 
-          <Link to="/availability">
-            <h2 className="nav-link active">View Employee Weekly Availability</h2>
-          </Link>
+          {/* <Link to="/availability">
+            <h3 className="nav-link active">View Employee Weekly Availability</h3>
+          </Link> */}
 
           <Link to="/availability/new">
-            <h2 className="nav-link active">Create Weekly Availability</h2>
+            <h3 className="nav-link active">+ Availability</h3>
           </Link>
 
-          <Link to="/shiftschedules">
-            <h2 className="nav-link active">Shift Schedules List</h2>
-          </Link>
+          {/* <Link to="/shiftschedules">
+            <h3 className="nav-link active">Shift Schedules List</h3>
+          </Link> */}
 
           <Link to="/shiftschedule/new">
-            <h2 className="nav-link active">Schedule A Shift</h2>
+            <h3 className="nav-link active">+ Shift</h3>
           </Link>
         </nav>
 
@@ -131,6 +134,9 @@ class App extends Component {
 
           <Route
             exact path="/shiftschedule/:id" render={routerProps => <ShiftSchedDetail {...routerProps} />} />
+
+          <Route
+            exact path="/" render={routerProps => <Employee {...routerProps} />} />
           </Switch>
         </main>
       </div>
