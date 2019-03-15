@@ -57,8 +57,6 @@ class ShiftSchedList extends Component {
                     return cv.full_name
                 }
             })
-            
-            console.log(red)
             return <h2 className='schedules-schedule' key={i}>
               <Link to={'/shiftschedule/' + item.id}><p>Date: {item.date}</p></Link>
               <p>Shift: {item.shift}</p>
