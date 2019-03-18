@@ -50,7 +50,7 @@ Add screenshots
 * Surge
 # Installation Instructions / Getting Started
 * Front-end instructions:
-  * Navigate to the [front-end repo] (https://github.com/rc1336/scheduler-fe)
+  * Navigate to the [front-end repo](https://github.com/rc1336/scheduler-fe)
   * Fork the repository
   * Clone the repository
     * Click on `Clone or Download`
@@ -59,11 +59,10 @@ Add screenshots
   * Install dependencies
     * change into this directory
     * run $ npm install
-* Repeat the above steps with the [back-end repo] (https://github.com/CourtneyLTyler/scheduler-be)
+* Repeat the above steps with the [back-end repo](https://github.com/CourtneyLTyler/scheduler-be)
 ## Contribution Guidelines
 * Here are some links for those who would like to contribute to our code, identify bugs, and/or propose improvements:
   * [Front-end repo](https://github.com/rc1336/scheduler-fe)
   * [Front-end issue tracker](https://github.com/rc1336/scheduler-fe/issues)
   * [Back-end repo](https://github.com/CourtneyLTyler/scheduler-be)
-  * [Back-end issue tracker]
-(https://github.com/CourtneyLTyler/scheduler-be/issues)
+  * [Back-end issue tracker](https://github.com/CourtneyLTyler/scheduler-be/issues)
