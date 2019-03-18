@@ -55,10 +55,10 @@ Add screenshots
   * Clone the repository
     * Click on `Clone or Download`
     * Use your CLI to change into the directory where you would like this to be located
-    * Run $ git clone <clone link provided by GitHub>
+    * Run `$ git clone <clone link provided by GitHub>`
   * Install dependencies
     * change into this directory
-    * run $ npm install
+    * run `$ npm install`
 * Repeat the above steps with the [back-end repo](https://github.com/CourtneyLTyler/scheduler-be)
 ## Contribution Guidelines
 * Here are some links for those who would like to contribute to our code, identify bugs, and/or propose improvements:
