@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import './Employee.css'
+// import './Employee.css'
 class Employee extends Component {
     state = {
         employees: []

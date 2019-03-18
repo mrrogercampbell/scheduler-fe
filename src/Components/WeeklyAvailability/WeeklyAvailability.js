@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './WeeklyAvailability.css'
+// import './WeeklyAvailability.css'
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 class WeeklyAvailability extends Component {
     state = {
@@ -55,6 +56,9 @@ class WeeklyAvailability extends Component {
             <div className='weekly-availability-container'>
                 <h2>Hello from weeklyAvailability component</h2>
                 {weeklyAvailability}
+                <Link to="/availability/new">
+                    <h3 className="nav-link active">+ Availability</h3>
+                </Link>
             </div>
         );
     }
