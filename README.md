@@ -48,7 +48,7 @@ Add screenshots
 * GitHub
 * Heroku
 * Surge
-# Installation Instructions / Getting Started
+## Installation Instructions / Getting Started
 * Front-end instructions:
   * Navigate to the [front-end repo](https://github.com/rc1336/scheduler-fe)
   * Fork the repository
