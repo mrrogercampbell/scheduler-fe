@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const CIRCLE_SIZE = 85;
 
 class DnDEx extends React.Component {
@@ -49,6 +50,7 @@ class DnDEx extends React.Component {
         this.previousTop = top;
         return delta;
     };
+
 
     render() {
         const { hasCapture, circleLeft, circleTop } = this.state;

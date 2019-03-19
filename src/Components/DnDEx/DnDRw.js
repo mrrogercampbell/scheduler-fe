@@ -1,14 +1,16 @@
 import React from 'react';
 import Img from '../../Images/dinner-plate.png'
+import './DnDEx.css'
 
 
-const CIRCLE_SIZE = 85;
+const CIRCLE_SIZE = 100;
 
 class DnDExRw extends React.Component {
     state = {
         hasCapture: false,
-        circleLeft: 80,
-        circleTop: 80,
+        circleLeft: 10,
+        circleTop: 50,
+        didMove: ''
     };
     isDragging = false;
     previousLeft = 0;
@@ -32,7 +34,9 @@ class DnDExRw extends React.Component {
         this.setState(({ circleLeft, circleTop }) => ({
             circleLeft: circleLeft + left,
             circleTop: circleTop + top,
+            didMove: 'yes'
         }));
+        console.log(this.state.didMove)
     };
 
     onUp = event => (this.isDragging = false);
@@ -61,17 +65,19 @@ class DnDExRw extends React.Component {
             minHeight: 400,
             width: '100%',
             position: 'relative',
+
         };
 
         const circleStyle = {
             width: CIRCLE_SIZE,
             height: CIRCLE_SIZE,
-            borderRadius: CIRCLE_SIZE / 2,
+            // borderRadius: CIRCLE_SIZE / 2,
             position: 'absolute',
             left: circleLeft,
             top: circleTop,
             backgroundColor: hasCapture ? 'blue' : 'green',
             touchAction: 'none',
+            backgroundImage: `url(${Img})`,
         };
 
 
@@ -87,11 +93,10 @@ class DnDExRw extends React.Component {
                     onGotPointerCapture={this.onGotCapture}
                     onLostPointerCapture={this.onLostCapture}
                 >
-                    <img
-                        src={Img}
-                        alt='dinner plate'
 
-                    />
+                </div>
+                <div className='section-1'>
+                    <h1>Welcome to Section one</h1>
                 </div>
             </div>
         );
