@@ -26,15 +26,15 @@ class Employee extends Component {
         const employees = this.state.employees.map(item => {
             return (
                 <div key={item.id}>
-                    <Link to={'employee/' + item.id}> <h1>Employee Name: {item.full_name}</h1></Link>
-                    <p>Position: {item.position}</p>
-                    <p>Photo: <img src={item.photo_url} alt={item.full_name}></img></p>
+                    <Link to={'employee/' + item.id}> <h1>Name: {item.full_name}</h1></Link>
+                    <h2>Position: {item.position}</h2>
+                    <h2>Photo: <img src={item.photo_url} alt={item.full_name}></img></h2>
                 </div>
             )
         })
         return (
             <div className='employee-container'>
-                <h2>Hello from employees component</h2>
+            <h1>Employee Roster</h1>
                 {employees}
                 <Link to="/employee/new">
                     <h3 className="nav-link active">Add Employee</h3>
