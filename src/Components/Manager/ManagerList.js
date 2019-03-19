@@ -10,7 +10,9 @@ class ManagerList extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:8000/api/managers').then((response) => {
+    // axios.get('http://localhost:8000/api/managers').then(
+    axios.get('https://scheduler-be-1.herokuapp.com/api/managers').then(  
+    (response) => {
       this.setState({
         managers: response.data
       })
