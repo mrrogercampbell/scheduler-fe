@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Link } from "react-router-dom";
 
 class UnavailabilityCreate extends Component {
     constructor() {
@@ -59,6 +60,9 @@ class UnavailabilityCreate extends Component {
                     />
                     <button type="submit">Submit</button>
                 </form>
+                <Link to="/unavailability">
+                    <h3 className="nav-link active">View Time Off Requests</h3>
+                </Link>
             </div>
         );
     }

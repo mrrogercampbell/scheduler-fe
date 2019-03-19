@@ -43,40 +43,20 @@ class App extends Component {
             <h3 className="nav-link active">Roster</h3>
           </Link>
 
-          {/* <Link to="/employee/new">
-            <h3 className="nav-link active">Add Employee</h3>
-          </Link> */}
-
           <Link to="/managers">
             <h3 className="nav-link active">Managers</h3>
           </Link>
-
-          {/* <Link to="/manager/new">
-            <h3 className="nav-link active">Add Manager</h3>
-          </Link> */}
-
-          {/* <Link to="/unavailability">
-            <h3 className="nav-link active">View Time Off Requests</h3>
-          </Link> */}
 
           <Link to="/unavailability/new">
             <h3 className="nav-link active">+ TO Req</h3>
           </Link>
 
-          {/* <Link to="/availability">
+          <Link to="/availability">
             <h3 className="nav-link active">View Employee Weekly Availability</h3>
-          </Link> */}
-
-          <Link to="/availability/new">
-            <h3 className="nav-link active">+ Availability</h3>
           </Link>
 
-          {/* <Link to="/shiftschedules">
+          <Link to="/shiftschedules">
             <h3 className="nav-link active">Shift Schedules List</h3>
-          </Link> */}
-
-          <Link to="/shiftschedule/new">
-            <h3 className="nav-link active">+ Shift</h3>
           </Link>
         </nav>
 
@@ -121,23 +101,23 @@ class App extends Component {
             <Route
               exact path="/availability/new" render={routerProps => <WeeklyAvailabilityCreate {...routerProps} />} />
 
-          <Route
-            exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
+            <Route
+              exact path="/availability" render={routerProps => <WeeklyAvailability {...routerProps} />} />
 
-          <Route
-            exact path="/shiftschedule/new" render={routerProps => <ShiftSchedCreate {...routerProps} />} />
+            <Route
+              exact path="/shiftschedule/new" render={routerProps => <ShiftSchedCreate {...routerProps} />} />
 
-          <Route
-            exact path="/shiftschedules" render={routerProps => <ShiftSchedList {...routerProps} />} />
+            <Route
+              exact path="/shiftschedules" render={routerProps => <ShiftSchedList {...routerProps} />} />
 
-          <Route
-            exact path="/shiftschedule/edit/:id" render={routerProps => <ShiftSchedUpdate {...routerProps} />} />
+            <Route
+              exact path="/shiftschedule/edit/:id" render={routerProps => <ShiftSchedUpdate {...routerProps} />} />
 
-          <Route
-            exact path="/shiftschedule/:id" render={routerProps => <ShiftSchedDetail {...routerProps} />} />
+            <Route
+              exact path="/shiftschedule/:id" render={routerProps => <ShiftSchedDetail {...routerProps} />} />
 
-          <Route
-            exact path="/" render={routerProps => <Home {...routerProps} />} />
+            <Route
+              exact path="/" render={routerProps => <Home {...routerProps} />} />
           </Switch>
         </main>
       </div>
