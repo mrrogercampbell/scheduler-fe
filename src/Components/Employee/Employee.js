@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 import './Employee.css'
 // import * as Constants from './constants'
-=======
 // import './Employee.css'
->>>>>>> 7f33b7fadb636e4760d9c40c84cf236f9b35d2bf
 class Employee extends Component {
     state = {
         employees: []
