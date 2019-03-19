@@ -28,6 +28,7 @@ import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 
 import DnDEx from '../DnDEx/DnDEx';
+import DnDRw from '../DnDEx/DnDRw'
 
 class App extends Component {
 
@@ -63,6 +64,10 @@ class App extends Component {
           </Link>
 
           <Link to="/dnd">
+            <h3 className="nav-link active">DnD Ex</h3>
+          </Link>
+
+          <Link to="/dndrw">
             <h3 className="nav-link active">DnD Ex</h3>
           </Link>
         </nav>
@@ -128,6 +133,9 @@ class App extends Component {
 
             <Route
               exact path="/dnd" render={routerProps => <DnDEx {...routerProps} />} />
+
+            <Route
+              exact path="/dndrw" render={routerProps => <DnDRw {...routerProps} />} />
           </Switch>
         </main>
       </div>

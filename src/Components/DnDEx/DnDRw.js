@@ -1,8 +1,10 @@
 import React from 'react';
+import Img from '../../Images/dinner-plate.png'
+
 
 const CIRCLE_SIZE = 85;
 
-class DnDEx extends React.Component {
+class DnDExRw extends React.Component {
     state = {
         hasCapture: false,
         circleLeft: 80,
@@ -72,6 +74,8 @@ class DnDEx extends React.Component {
             touchAction: 'none',
         };
 
+
+
         return (
             <div style={boxStyle}>
                 <div
@@ -82,11 +86,17 @@ class DnDEx extends React.Component {
                     onPointerCancel={this.onUp}
                     onGotPointerCapture={this.onGotCapture}
                     onLostPointerCapture={this.onLostCapture}
-                />
+                >
+                    <img
+                        src={Img}
+                        alt='dinner plate'
+
+                    />
+                </div>
             </div>
         );
     }
 }
 
 
-export default DnDEx
+export default DnDExRw
