@@ -12,8 +12,7 @@ class EmployeeUpdate extends Component {
     }
 
     componentDidMount() {
-        console.log('http://localhost:8000/api/employee/' + this.props.match.params.id)
-        axios.get('http://localhost:8000/api/employee/' + this.props.match.params.id)
+        axios.get('https://scheduler-be-1.herokuapp.com/api/employee/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     employee: res.data
@@ -36,7 +35,7 @@ class EmployeeUpdate extends Component {
         e.preventDefault();
         const { full_name, position, photo_url, sales, rating } = this.state.employee
         // put request throwing 403 - forbidden
-        axios.put('http://localhost:8000/api/employee/' + this.props.match.params.id, { full_name, position, photo_url, sales, rating })
+        axios.put('https://scheduler-be-1.herokuapp.com/api/employee/' + this.props.match.params.id, { full_name, position, photo_url, sales, rating })
             .then((res) => {
                 console.log(res)
                 this.props.history.push('/employee/' + this.props.match.params.id)

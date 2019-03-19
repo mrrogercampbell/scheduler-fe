@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './/WeeklyAvailability.css'
 
 class WeeklyAvailabilityCreate extends Component {
     constructor() {
@@ -39,7 +40,7 @@ class WeeklyAvailabilityCreate extends Component {
     onSubmit = e => {
         e.preventDefault();
         console.log("Weekly Availability Form has been created");
-        
+
         // axios.post("http://localhost:8000/api/weeklyavailabilitycreate", this.state).then(result => {
         axios.post("https://scheduler-be-1.herokuapp.com/api/weeklyavailabilitycreate", this.state).then(result => {
             console.log(result)

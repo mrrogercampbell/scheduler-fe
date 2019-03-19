@@ -10,7 +10,7 @@ class Unavailability extends Component {
     };
 
     componentDidMount() {
-        axios.get('http://localhost:8000/api/unavailability')
+        axios.get('https://scheduler-be-1.herokuapp.com/api/unavailability')
             .then((item) => {
                 console.log(item)
                 this.setState({ unavailability: item.data, })

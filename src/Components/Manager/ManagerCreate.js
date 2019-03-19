@@ -24,8 +24,6 @@ class ManagerCreate extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    // console.log(this.state)
-    // axios.post('http://localhost:8000/api/managers', 
     axios.post('https://scheduler-be-1.herokuapp.com/api/managers', this.state).then(result => {
       console.log(result)
       this.props.history.push("/managers");

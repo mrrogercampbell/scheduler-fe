@@ -1,16 +1,20 @@
-.weekly-availability-container{
+/* .weekly-availability-container{
     border: solid orange 5px;
     margin: 5px;
     padding: 10px;
-}
+} */
 
 .bold-span{
     font-weight: bold;
 }
 
 
-.weekly-availability-create-form{
+/* .weekly-availability-create-form{
     border: solid grey 5px;
     margin: 5px;
     padding: 10px;
+} */
+
+ul {
+    list-style-type: none;
 }

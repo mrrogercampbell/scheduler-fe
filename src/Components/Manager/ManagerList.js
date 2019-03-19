@@ -10,13 +10,12 @@ class ManagerList extends Component {
     }
   }
   componentDidMount() {
-    // axios.get('http://localhost:8000/api/managers').then(
-    axios.get('https://scheduler-be-1.herokuapp.com/api/managers').then(  
-    (response) => {
-      this.setState({
-        managers: response.data
+    axios.get('https://scheduler-be-1.herokuapp.com/api/managers').then(
+      (response) => {
+        this.setState({
+          managers: response.data
+        })
       })
-    })
   }
   render() {
     let managers = this.state.managers.map((item, i) => {
@@ -30,9 +29,9 @@ class ManagerList extends Component {
       <div>
         <h1>Managers:</h1>
         {managers}
-          <Link to="/manager/new">
-            <h3 className="nav-link active">Add Manager</h3>
-          </Link>
+        <Link to="/manager/new">
+          <h3 className="nav-link active">Add Manager</h3>
+        </Link>
       </div>
     );
   }

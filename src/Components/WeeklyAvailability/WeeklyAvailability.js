@@ -7,9 +7,8 @@ class WeeklyAvailability extends Component {
     state = {
         weeklyAvailability: [],
     };
-    
+
     async componentDidMount() {
-        // axios.get('http://localhost:8000/api/weeklyavailability')
         axios.get('https://scheduler-be-1.herokuapp.com/api/weeklyavailability')
             .then((item) => {
                 console.log(item)
