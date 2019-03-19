@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import { API_URL } from '../../config/const'
 
 class ManagerList extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class ManagerList extends Component {
     }
   }
   componentDidMount() {
-    axios.get('https://scheduler-be-1.herokuapp.com/api/managers').then(
+    axios.get(API_URL + '/managers').then(
       (response) => {
         this.setState({
           managers: response.data

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import { API_URL } from '../../config/const'
 
 class UnavailabilityCreate extends Component {
     constructor() {
@@ -23,7 +24,7 @@ class UnavailabilityCreate extends Component {
         e.preventDefault();
         console.log("Unavailability request has been created");
 
-        axios.post("https://scheduler-be-1.herokuapp.com/api/unavailability", this.state).then(result => {
+        axios.post(API_URL + "/unavailability", this.state).then(result => {
             console.log(result)
             this.props.history.push("/unavailability");
         });

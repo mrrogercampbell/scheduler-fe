@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-// import { error } from 'util';
+import { API_URL } from '../../config/const'
 
 class ManagerCreate extends Component {
   constructor() {
@@ -17,14 +17,11 @@ class ManagerCreate extends Component {
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
     console.log(this.state);
-    // console.log(this.state.position);
-    // console.log(this.state.full_name);
-    // console.log(this.state.photo_url);
   };
 
   onSubmit = e => {
     e.preventDefault();
-    axios.post('https://scheduler-be-1.herokuapp.com/api/managers', this.state).then(result => {
+    axios.post(API_URL + '/managers', this.state).then(result => {
       console.log(result)
       this.props.history.push("/managers");
     }).catch((error) => {

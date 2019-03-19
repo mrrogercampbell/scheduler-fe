@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { API_URL } from '../../config/const'
 
 class ShiftSchedList extends Component {
     constructor(props) {
@@ -13,10 +14,8 @@ class ShiftSchedList extends Component {
     componentDidMount() {
         
         axios.all([
-            // axios.get('http://localhost:8000/api/schedulebyshifts'),
-            // axios.get('http://localhost:8000/api/employees')
-            axios.get('https://scheduler-be-1.herokuapp.com/api/schedulebyshifts'),
-            axios.get('https://scheduler-be-1.herokuapp.com/api/employees')
+            axios.get(API_URL + '/schedulebyshifts'),
+            axios.get(API_URL + '/employees')
         ])
             .then(axios.spread((shiftRes, empRes) => {
                 this.setState({

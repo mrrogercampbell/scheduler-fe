@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { API_URL } from '../../config/const'
 
 class ManagerUpdate extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class ManagerUpdate extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://scheduler-be-1.herokuapp.com/api/manager/' + this.props.match.params.id)
+        axios.get(API_URL + '/manager/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     manager: res.data
@@ -34,7 +35,7 @@ class ManagerUpdate extends Component {
         console.log("update submitting")
         e.preventDefault();
         const { full_name, position, photo_url } = this.state.manager
-        axios.put('https://scheduler-be-1.herokuapp.com/api/manager/' + this.props.match.params.id, { full_name, position, photo_url })
+        axios.put(API_URL + '/manager/' + this.props.match.params.id, { full_name, position, photo_url })
             .then((res) => {
                 console.log(res)
                 this.props.history.push('/manager/' + this.props.match.params.id)

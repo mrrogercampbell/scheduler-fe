@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-// import './WeeklyAvailability.css'
 import axios from 'axios'
 import { Link } from "react-router-dom";
+import { API_URL } from '../../config/const'
 
 class WeeklyAvailability extends Component {
     state = {
@@ -9,7 +9,7 @@ class WeeklyAvailability extends Component {
     };
 
     async componentDidMount() {
-        axios.get('https://scheduler-be-1.herokuapp.com/api/weeklyavailability')
+        axios.get(API_URL + '/weeklyavailability')
             .then((item) => {
                 console.log(item)
                 this.setState({ weeklyAvailability: item.data, })
@@ -17,11 +17,7 @@ class WeeklyAvailability extends Component {
     }
 
     render() {
-        // const obj = JSON.parse(this.state.weeklyAvailability.mon_am)
-        // console.log(obj)
         const weeklyAvailability = this.state.weeklyAvailability.map(item => {
-            // const obj = JSON.parse(item.mon_am)
-            // console.log(obj)
             return (
                 <div key={item.id}>
                     <p>Employee Number: {item.employee}</p>

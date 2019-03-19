@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './Employee.css'
 import { API_URL } from '../../config/const'
-// import * as Constants from './constants'
-// import './Employee.css'
 class Employee extends Component {
     state = {
         employees: []
@@ -11,8 +9,6 @@ class Employee extends Component {
 
     async componentDidMount() {
         try {
-            // const res = await fetch('http://localhost:8000/api/employees');
-            
             const res = await fetch(API_URL + '/employees');
             const employees = await res.json();
             this.setState({

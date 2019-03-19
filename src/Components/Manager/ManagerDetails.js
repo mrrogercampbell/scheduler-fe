@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from '../../config/const'
 
 class ManagerDetails extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ManagerDetails extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://scheduler-be-1.herokuapp.com/api/manager/' + this.props.match.params.id)
+    axios.get(API_URL + '/manager/' + this.props.match.params.id)
       .then((res) => {
         this.setState({
           manager: res.data
@@ -25,7 +26,7 @@ class ManagerDetails extends Component {
 
   handleDelete = e => {
     e.preventDefault();
-    axios.delete('https://scheduler-be-1.herokuapp.com/api/manager/' + this.props.match.params.id)
+    axios.delete(API_URL + '/manager/' + this.props.match.params.id)
       .then((res) => {
         console.log(res.data)
         this.setState({

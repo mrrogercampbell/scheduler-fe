@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
-// import './Unavailability.css'
+import { API_URL } from '../../config/const'
 
 
 class Unavailability extends Component {
@@ -10,7 +10,7 @@ class Unavailability extends Component {
     };
 
     componentDidMount() {
-        axios.get('https://scheduler-be-1.herokuapp.com/api/unavailability')
+        axios.get(API_URL + '/unavailability')
             .then((item) => {
                 console.log(item)
                 this.setState({ unavailability: item.data, })

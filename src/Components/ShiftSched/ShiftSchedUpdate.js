@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { API_URL } from '../../config/const'
 
 class ShiftSchedUpdate extends Component {
     constructor(props) {
@@ -14,10 +15,8 @@ class ShiftSchedUpdate extends Component {
 
     componentDidMount() {
         axios.all([
-            // axios.get('http://localhost:8000/api/employees'),
-            // axios.get('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
-            axios.get('https://scheduler-be-1.herokuapp.com/api/employees'),
-            axios.get('https://scheduler-be-1.herokuapp.com/api/schedulebyshift/' + this.props.match.params.id)
+            axios.get(API_URL + '/employees'),
+            axios.get(API_URL + '/schedulebyshift/' + this.props.match.params.id)
         ])
         .then(axios.spread((empRes, schedRes) => {
             this.setState({
@@ -41,8 +40,7 @@ class ShiftSchedUpdate extends Component {
         console.log("update submitting")
         e.preventDefault();
         const { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple} = this.state.shifts
-        // put request throwing 403 - forbidden
-        axios.put('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id, { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple})
+        axios.put(API_URL + '/schedulebyshift/' + this.props.match.params.id, { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple})
             .then((res) => {
                 console.log(res)
                 this.props.history.push('/shiftschedule/' + this.props.match.params.id)
