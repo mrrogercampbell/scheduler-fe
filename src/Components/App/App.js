@@ -58,6 +58,7 @@ class App extends Component {
           <Link to="/shiftschedules">
             <h3 className="nav-link active">Shift Schedules List</h3>
           </Link>
+          <h1>{process.env.NODE_ENV}</h1>
         </nav>
 
         <main>
