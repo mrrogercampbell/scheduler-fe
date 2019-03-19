@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './Employee.css'
+// import * as Constants from './constants'
 class Employee extends Component {
     state = {
         employees: []
@@ -8,7 +9,9 @@ class Employee extends Component {
 
     async componentDidMount() {
         try {
-            const res = await fetch('http://localhost:8000/api/employees');
+            // const res = await fetch('http://localhost:8000/api/employees');
+            
+            const res = await fetch('https://scheduler-be-1.herokuapp.com/api/employees');
             const employees = await res.json();
             this.setState({
                 employees

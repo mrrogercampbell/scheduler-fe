@@ -22,7 +22,9 @@ class EmployeeCreate extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        axios.post("http://localhost:8000/api/employees", this.state).then(result => {
+        // axios.post("http://localhost:8000/api/employees", 
+        axios.post("https://scheduler-be-1.herokuapp.com/api/employees", 
+            this.state).then(result => {
             console.log(result)
             console.log("Employee has been created");
             this.props.history.push("/employees");
