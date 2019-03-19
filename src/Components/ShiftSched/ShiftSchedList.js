@@ -11,9 +11,12 @@ class ShiftSchedList extends Component {
         }
     }
     componentDidMount() {
+        
         axios.all([
-            axios.get('http://localhost:8000/api/schedulebyshifts'),
-            axios.get('http://localhost:8000/api/employees')
+            // axios.get('http://localhost:8000/api/schedulebyshifts'),
+            // axios.get('http://localhost:8000/api/employees')
+            axios.get('https://scheduler-be-1.herokuapp.com/api/schedulebyshifts'),
+            axios.get('https://scheduler-be-1.herokuapp.com/api/employees')
         ])
             .then(axios.spread((shiftRes, empRes) => {
                 this.setState({

@@ -10,10 +10,10 @@ class ShiftSchedDetail extends Component {
         }
         this.handleDelete = this.handleDelete.bind(this)
     }
-
+    
     componentDidMount() {
-        console.log('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
-        axios.get('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+        // axios.get('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+        axios.get('https://scheduler-be-1.herokuapp.com/api/schedulebyshift/' + this.props.match.params.id)
           .then((res) => {
             this.setState({
               shift: res.data
@@ -23,10 +23,11 @@ class ShiftSchedDetail extends Component {
             console.log(err);
         });
     }
-
+    
     handleDelete = e => {
         e.preventDefault();
-        axios.delete('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+        // axios.delete('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+        axios.delete('https://scheduler-be-1.herokuapp.com/api/schedulebyshift/' + this.props.match.params.id)
           .then((res) => {
             console.log(res.data)
             this.setState({

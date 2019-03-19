@@ -39,8 +39,9 @@ class WeeklyAvailabilityCreate extends Component {
     onSubmit = e => {
         e.preventDefault();
         console.log("Weekly Availability Form has been created");
-
-        axios.post("http://localhost:8000/api/weeklyavailabilitycreate", this.state).then(result => {
+        
+        // axios.post("http://localhost:8000/api/weeklyavailabilitycreate", this.state).then(result => {
+        axios.post("https://scheduler-be-1.herokuapp.com/api/weeklyavailabilitycreate", this.state).then(result => {
             console.log(result)
             this.props.history.push("/weeklyavailabilitycreate");
         });

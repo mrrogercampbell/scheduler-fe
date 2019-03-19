@@ -14,8 +14,10 @@ class ShiftSchedUpdate extends Component {
 
     componentDidMount() {
         axios.all([
-            axios.get('http://localhost:8000/api/employees'),
-            axios.get('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+            // axios.get('http://localhost:8000/api/employees'),
+            // axios.get('http://localhost:8000/api/schedulebyshift/' + this.props.match.params.id)
+            axios.get('https://scheduler-be-1.herokuapp.com/api/employees'),
+            axios.get('https://scheduler-be-1.herokuapp.com/api/schedulebyshift/' + this.props.match.params.id)
         ])
         .then(axios.spread((empRes, schedRes) => {
             this.setState({

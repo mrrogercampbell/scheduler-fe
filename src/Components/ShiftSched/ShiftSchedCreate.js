@@ -20,7 +20,9 @@ class ShiftSchedCreate extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     componentDidMount() {
-      axios.get('http://localhost:8000/api/employees').then((response) => {
+      // axios.get('http://localhost:8000/api/employees').then(
+      axios.get('https://scheduler-be-1.herokuapp.com/api/employees').then(
+        (response) => {
         this.setState({
           employees: response.data
         })
@@ -33,7 +35,8 @@ class ShiftSchedCreate extends Component {
 
     onSubmit = e => {
         e.preventDefault()
-        axios.post("http://localhost:8000/api/schedulebyshifts", this.state).then(result => {
+        // axios.post("http://localhost:8000/api/schedulebyshifts", this.state).then(result => {
+        axios.post("https://scheduler-be-1.herokuapp.com/api/schedulebyshifts", this.state).then(result => {
             console.log(result);
             this.props.history.push("/shiftschedules");
         });

@@ -12,8 +12,8 @@ class ManagerDetails extends Component {
       }
 
       componentDidMount() {
-        console.log('http://localhost:8000/api/manager/' + this.props.match.params.id)
-        axios.get('http://localhost:8000/api/manager/' + this.props.match.params.id)
+        // axios.get('http://localhost:8000/api/manager/' + this.props.match.params.id)
+        axios.get('https://scheduler-be-1.herokuapp.com/api/manager/' + this.props.match.params.id)
           .then((res) => {
             this.setState({
               manager: res.data
@@ -27,7 +27,8 @@ class ManagerDetails extends Component {
       handleDelete = e => {
         e.preventDefault();
         // throwing 403 - forbidden
-        axios.delete('http://localhost:8000/api/manager/' + this.props.match.params.id)
+        // axios.delete('http://localhost:8000/api/manager/' + this.props.match.params.id)
+        axios.delete('https://scheduler-be-1.herokuapp.com/api/manager/' + this.props.match.params.id)
           .then((res) => {
             console.log(res.data)
             this.setState({
