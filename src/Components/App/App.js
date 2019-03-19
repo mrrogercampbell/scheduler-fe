@@ -3,6 +3,8 @@ import { Route, Link, Switch } from "react-router-dom";
 import './App.css'
 
 
+import Home from '../Home'
+
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
 import EmployeeUpdate from '../Employee/EmployeeUpdate'
@@ -24,7 +26,8 @@ import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
-import Home from '../Home'
+
+import DnDEx from '../DnDEx/DnDEx';
 
 class App extends Component {
 
@@ -57,6 +60,10 @@ class App extends Component {
 
           <Link to="/shiftschedules">
             <h3 className="nav-link active">Shift Schedules List</h3>
+          </Link>
+
+          <Link to="/dnd">
+            <h3 className="nav-link active">DnD Ex</h3>
           </Link>
         </nav>
 
@@ -118,6 +125,9 @@ class App extends Component {
 
             <Route
               exact path="/" render={routerProps => <Home {...routerProps} />} />
+
+            <Route
+              exact path="/dnd" render={routerProps => <DnDEx {...routerProps} />} />
           </Switch>
         </main>
       </div>
