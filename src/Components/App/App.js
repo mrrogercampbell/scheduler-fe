@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from "react-router-dom";
 import './App.css'
-
-
-import Home from '../Home'
-
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
 import EmployeeUpdate from '../Employee/EmployeeUpdate'
 import EmployeeDetails from '../Employee/EmployeeDetails'
-
 import ManagerCreate from '../Manager/ManagerCreate';
 import ManagerList from '../Manager/ManagerList'
 import ManagerDetails from '../Manager/ManagerDetails';
 import ManagerUpdate from '../Manager/ManagerUpdate';
-
 import WeeklyAvailabilityCreate from '../WeeklyAvailability/WeeklyAvailabilityCreate';
 import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
-
 import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
 import Unavailability from '../Unavailability/Unavailability'
 import UnavailabilityDetails from '../Unavailability/UnavailabilityDetails'
-
 import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
@@ -29,54 +21,59 @@ import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 
 import DnDEx from '../DnDEx/DnDEx';
 import DnDRw from '../DnDEx/DnDRw'
+import Home from '../Home'
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   render() {
     return (
       <div className='App'>
-
-
-        <nav className="nav nav-pills nav-fill nav justify-content-center van">
-
-          <Link to="/">
-            <h1 className="nav-link active">Scheduler</h1>
-          </Link>
-
-          <Link to="/employees">
-            <h3 className="nav-link active">Roster</h3>
-          </Link>
-
-          <Link to="/managers">
-            <h3 className="nav-link active">Managers</h3>
-          </Link>
-
-          <Link to="/unavailability/new">
-            <h3 className="nav-link active">+ TO Req</h3>
-          </Link>
-
-          <Link to="/availability">
-            <h3 className="nav-link active">View Employee Weekly Availability</h3>
-          </Link>
-
-          <Link to="/shiftschedules">
-            <h3 className="nav-link active">Shift Schedules List</h3>
-          </Link>
-
-          <Link to="/dnd">
-            <h3 className="nav-link active">DnD Ex</h3>
-          </Link>
-
-          <Link to="/dndrw">
-            <h3 className="nav-link active">DnD Ex</h3>
-          </Link>
-        </nav>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Scheduler</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/employees">Roster</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/managers">Managers</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/unavailability/new">+ TO Request</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/availability">Availability</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/shiftschedules">Shifts</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/dndex">DnD Example</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/dndrw">DnD Rework</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
 
         <main>
           <Switch>
-            {/* <Route
-            exact path="/employee/:id" render={routerProps => <EmployeeDetail {...routerProps} />} /> */}
-
             <Route
               exact path="/employee/new" render={routerProps => <EmployeeCreate {...routerProps} />} />
 
@@ -132,7 +129,7 @@ class App extends Component {
               exact path="/" render={routerProps => <Home {...routerProps} />} />
 
             <Route
-              exact path="/dnd" render={routerProps => <DnDEx {...routerProps} />} />
+              exact path="/dndex" render={routerProps => <DnDEx {...routerProps} />} />
 
             <Route
               exact path="/dndrw" render={routerProps => <DnDRw {...routerProps} />} />
