@@ -19,7 +19,7 @@ import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 import Home from '../Home'
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap'
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink} from 'reactstrap'
 
 class App extends Component {
   constructor(props) {
@@ -39,32 +39,37 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Navbar color="faded" light expand="md">
-            {/* Brandname */}
-          <NavbarBrand href="/">
-            Scheduler
-          </NavbarBrand>
-               {/* Add toggler to auto-collapse */}
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Scheduler</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-
-            {/* Pull right */}
-            <Nav className="mr-auto" navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/employees">Roster</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/managers">Managers</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/unavailability/new">+ TO Request</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/availability">Availability</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/shiftschedules">Shifts</NavLink>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Roster
-                </DropdownToggle>
-
-                <DropdownMenu >
+                <DropdownMenu right>
                   <DropdownItem>
-                    Managers
+                    Option 1
                   </DropdownItem>
                   <DropdownItem>
-                    + TO Request
+                    Option 2
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Logout
+                    Reset
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -72,41 +77,8 @@ class App extends Component {
           </Collapse>
         </Navbar>
 
-
-
-
-        <nav className="nav nav-pills nav-fill nav justify-content-center van">
-
-          <Link to="/">
-            <h1 className="nav-link active">Scheduler</h1>
-          </Link>
-
-          <Link to="/employees">
-            <h3 className="nav-link active">Roster</h3>
-          </Link>
-
-          <Link to="/managers">
-            <h3 className="nav-link active">Managers</h3>
-          </Link>
-
-          <Link to="/unavailability/new">
-            <h3 className="nav-link active">+ TO Req</h3>
-          </Link>
-
-          <Link to="/availability">
-            <h3 className="nav-link active">View Employee Weekly Availability</h3>
-          </Link>
-
-          <Link to="/shiftschedules">
-            <h3 className="nav-link active">Shift Schedules List</h3>
-          </Link>
-        </nav>
-
         <main>
           <Switch>
-            {/* <Route
-            exact path="/employee/:id" render={routerProps => <EmployeeDetail {...routerProps} />} /> */}
-
             <Route
               exact path="/employee/new" render={routerProps => <EmployeeCreate {...routerProps} />} />
 
