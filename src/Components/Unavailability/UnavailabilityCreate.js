@@ -23,7 +23,7 @@ class UnavailabilityCreate extends Component {
         e.preventDefault();
         console.log("Unavailability request has been created");
 
-        axios.post("http://localhost:8000/api/unavailability", this.state).then(result => {
+        axios.post("https://scheduler-be-1.herokuapp.com/api/unavailability", this.state).then(result => {
             console.log(result)
             this.props.history.push("/unavailability");
         });

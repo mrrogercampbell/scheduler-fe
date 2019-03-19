@@ -12,8 +12,7 @@ class UnavailabilityDetail extends Component {
     }
 
     componentDidMount() {
-        console.log('http://localhost:8000/api/unavailability/' + this.props.match.params.id)
-        axios.get('http://localhost:8000/api/unavailability/' + this.props.match.params.id)
+        axios.get('https://scheduler-be-1.herokuapp.com/api/unavailability/' + this.props.match.params.id)
             .then((res) => {
                 this.setState({
                     unavailability: res.data
@@ -27,7 +26,7 @@ class UnavailabilityDetail extends Component {
     handleDelete = e => {
         e.preventDefault();
         // throwing 403 - forbidden
-        axios.delete('http://localhost:8000/api/unavailability/' + this.props.match.params.id)
+        axios.delete('https://scheduler-be-1.herokuapp.com/api/unavailability/' + this.props.match.params.id)
             .then((res) => {
                 console.log(res.data)
                 this.setState({
