@@ -19,15 +19,30 @@ import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 
-import DnDEx from '../DnDEx/DnDEx';
+import DnDEx from '../DnDEx/DnDEx'
 import DnDRw from '../DnDEx/DnDRw'
+import DnDTest from '../DnDEx/DnDTest/DnDTest'
 import Home from '../Home'
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
+
+import styled from 'styled-components'
+
+const AppWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+`
+
+const Container = styled.div`
+`
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      checked: false
+    }
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -133,6 +148,13 @@ class App extends Component {
 
             <Route
               exact path="/dndrw" render={routerProps => <DnDRw {...routerProps} />} />
+
+            <AppWrapper>
+              <Container>
+                <DnDTest />
+                <DnDTest />
+              </Container>
+            </AppWrapper>
           </Switch>
         </main>
       </div>
