@@ -39,37 +39,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-<<<<<<< HEAD
-
-
-        <nav className="nav nav-pills nav-fill nav justify-content-center van">
-
-          <Link to="/">
-            <h1 className="nav-link active">Scheduler</h1>
-          </Link>
-
-          <Link to="/employees">
-            <h3 className="nav-link active">Roster</h3>
-          </Link>
-
-          <Link to="/managers">
-            <h3 className="nav-link active">Managers</h3>
-          </Link>
-
-          <Link to="/unavailability/new">
-            <h3 className="nav-link active">+ TO Req</h3>
-          </Link>
-
-          <Link to="/availability">
-            <h3 className="nav-link active">View Employee Weekly Availability</h3>
-          </Link>
-
-          <Link to="/shiftschedules">
-            <h3 className="nav-link active">Shift Schedules List</h3>
-          </Link>
-          <h1>{process.env.NODE_ENV}</h1>
-        </nav>
-=======
         <Navbar color="light" light expand="md">
           <NavbarBrand href="/">Scheduler</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -107,7 +76,6 @@ class App extends Component {
             </Nav>
           </Collapse>
         </Navbar>
->>>>>>> react-bootstrap
 
         <main>
           <Switch>
