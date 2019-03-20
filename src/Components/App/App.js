@@ -1,36 +1,45 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from "react-router-dom";
 import './App.css'
-
-
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
 import EmployeeUpdate from '../Employee/EmployeeUpdate'
 import EmployeeDetails from '../Employee/EmployeeDetails'
-
 import ManagerCreate from '../Manager/ManagerCreate';
 import ManagerList from '../Manager/ManagerList'
 import ManagerDetails from '../Manager/ManagerDetails';
 import ManagerUpdate from '../Manager/ManagerUpdate';
-
 import WeeklyAvailabilityCreate from '../WeeklyAvailability/WeeklyAvailabilityCreate';
 import WeeklyAvailability from '../WeeklyAvailability/WeeklyAvailability';
-
 import UnavailabilityCreate from '../Unavailability/UnavailabilityCreate';
 import Unavailability from '../Unavailability/Unavailability'
 import UnavailabilityDetails from '../Unavailability/UnavailabilityDetails'
-
 import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 import Home from '../Home'
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink} from 'reactstrap'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   render() {
     return (
       <div className='App'>
+<<<<<<< HEAD
 
 
         <nav className="nav nav-pills nav-fill nav justify-content-center van">
@@ -60,12 +69,48 @@ class App extends Component {
           </Link>
           <h1>{process.env.NODE_ENV}</h1>
         </nav>
+=======
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Scheduler</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/employees">Roster</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/managers">Managers</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/unavailability/new">+ TO Request</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/availability">Availability</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/shiftschedules">Shifts</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    Option 1
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+          </Collapse>
+        </Navbar>
+>>>>>>> react-bootstrap
 
         <main>
           <Switch>
-            {/* <Route
-            exact path="/employee/:id" render={routerProps => <EmployeeDetail {...routerProps} />} /> */}
-
             <Route
               exact path="/employee/new" render={routerProps => <EmployeeCreate {...routerProps} />} />
 
