@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import './App.css'
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
@@ -39,12 +39,12 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Navbar color="light" light expand="md">
+        <Navbar className='navbar-style' light  expand="md">
           <NavbarBrand href="/">Scheduler</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
+            <Nav className="ml-auto" navbar >
+              <NavItem className='navitem-style'>
                 <NavLink href="/employees">Roster</NavLink>
               </NavItem>
               <NavItem>

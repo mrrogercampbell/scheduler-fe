@@ -1,10 +1,10 @@
 body {
-  background-color: rgb(168,213,218);
+  background-color: rgb(243,248,251);
   color: rgb(40,49,84);
   text-align: center;
 }
 
-a {
+/* a {
   color: rgb(40,49,84);
   text-decoration: none;
 }
@@ -20,8 +20,8 @@ nav a {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-}
+} */
 
-.nav a:hover {
-  color: rgb(227,118,105)
+.navitem-style a:hover {
+  color: rgb(227,118,105);
 }
