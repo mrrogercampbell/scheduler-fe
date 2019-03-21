@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
 import { API_URL } from '../../config/const'
+import './Manager.css'
+
+const styles = {
+  textDecoration: 'none'
+}
 
 class ManagerList extends Component {
   constructor(props) {
@@ -20,19 +25,18 @@ class ManagerList extends Component {
   }
   render() {
     let managers = this.state.managers.map((item, i) => {
-      return <h2 className='managers-manager' key={i}>
-        <Link to={'/manager/' + item.id}><p>Name: {item.full_name}</p></Link>
-        <p>Position: {item.position}</p>
-        <p>Photo: <img src={item.photo_url} alt={item.full_name}></img></p>
-      </h2>
+      return <div className='itemStyle' key={i}>
+        <img className='photoStyle' src={item.photo_url} alt={item.full_name}></img>
+        <h2>Name: <Link className='linkStyle' style={styles} to={'/manager/' + item.id}> {item.full_name}</Link></h2>
+        <h4>Position: {item.position}</h4>
+      </div>
     })
     return (
-      <div>
-        <h1>Managers:</h1>
+      <div className='componentStyle'>
+        <h2 className='headerStyle'>Managers <Link className=
+        'linkStyle' style={styles} to="/manager/new">+</Link></h2>
         {managers}
-        <Link to="/manager/new">
-          <h3 className="nav-link active">Add Manager</h3>
-        </Link>
+
       </div>
     );
   }

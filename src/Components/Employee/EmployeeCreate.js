@@ -36,8 +36,8 @@ class EmployeeCreate extends Component {
     render() {
         const { full_name, position, photo_url, sales, rating } = this.state;
         return (
-            <div className='employee-create-form'>
-                <h1>New Employee Form:</h1>
+            <div className='componentStyle'>
+                <h2 className='headerStyle formStyle'>Add Team Member</h2>
                 <form onSubmit={this.onSubmit}>
                     <label>Full Name:</label>
                     <input

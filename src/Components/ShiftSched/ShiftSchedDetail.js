@@ -44,7 +44,7 @@ class ShiftSchedDetail extends Component {
     render() {
         const { date, shift, num_of_sections, section_red, section_orange, section_yellow, section_green, section_blue, section_purple} = this.state.shift
         return (
-            <div key={this.state.shift.id}>
+            <div className='componentStyle' key={this.state.shift.id}>
                 <h1>Date: {date}</h1>
                 <h2>Shift: {shift}</h2>
                 <h2>Number of Open Sections: {num_of_sections}</h2>

@@ -32,7 +32,8 @@ class ManagerCreate extends Component {
   render() {
     const { full_name, position, photo_url } = this.state;
     return (
-      <form onSubmit={this.onSubmit}>
+      <form className='componentStyle' onSubmit={this.onSubmit}>
+        <h3 className='headerStyle formStyle'>Add Manager</h3>
         <label>Full Name:</label>
         <input
           type="text"

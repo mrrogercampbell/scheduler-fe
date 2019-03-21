@@ -3,6 +3,10 @@ import axios from 'axios'
 import { Link } from "react-router-dom";
 import { API_URL } from '../../config/const'
 
+const styles = {
+    textDecoration: 'none'
+}
+
 class WeeklyAvailability extends Component {
     state = {
         weeklyAvailability: [],
@@ -49,12 +53,9 @@ class WeeklyAvailability extends Component {
         })
         return (
 
-            <div className='weekly-availability-container'>
-                <h2>Hello from weeklyAvailability component</h2>
+            <div className='componentStyle'>
+                <h2 className='headerStyle'>Weekly Availability <Link className='linkStyle' style={styles} to="/availability/new">+</Link></h2>
                 {weeklyAvailability}
-                <Link to="/availability/new">
-                    <h3 className="nav-link active">+ Availability</h3>
-                </Link>
             </div>
         );
     }

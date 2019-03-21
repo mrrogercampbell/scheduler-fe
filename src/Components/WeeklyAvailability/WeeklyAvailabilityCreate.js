@@ -51,10 +51,10 @@ class WeeklyAvailabilityCreate extends Component {
     render() {
         const { mon_am, tue_am, wed_am, thu_am, fri_am, sat_am, sun_am, mon_aft, tue_aft, wed_aft, thu_aft, fri_aft, sat_aft, sun_aft, mon_pm, tue_pm, wed_pm, thu_pm, fri_pm, sat_pm, sun_pm, } = this.state;
         return (
-            <div className='weekly-availability-create-form'>
-                <h1>Unavailability Request Form:</h1>
+            <div className='componentStyle'>
+                <h1 className='headerStyle formStyle'>Set Weekly Availability:</h1>
                 <form onSubmit={this.onSubmit}>
-                    <label>Monday Morning Availability:</label>
+                    <label>Monday Morning:</label>
                     <input
                         type="text"
                         name="mon_am"
@@ -62,55 +62,7 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Tuesday Morning Availability:</label>
-                    <input
-                        type="text"
-                        name="tue_am"
-                        value={tue_am}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Wednesday Morning Availability:</label>
-                    <input
-                        type="text"
-                        name="wed_am"
-                        value={wed_am}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Thursday Morning Availability:</label>
-                    <input
-                        type="text"
-                        name="thu_am"
-                        value={thu_am}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Friday Morning Availability:</label>
-                    <input
-                        type="text"
-                        name="fri_am"
-                        value={fri_am}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Saturday Morning Availability:</label>
-                    <input
-                        type="text"
-                        name="sat_am"
-                        value={sat_am}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Sunday Morning Availability:</label>
-                    <input
-                        type="text"
-                        name="sun_am"
-                        value={sun_am}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Monday Afternoon Availability: </label>
+                    <label>Monday Afternoon: </label>
                     <input
                         type="text"
                         name="mon_aft"
@@ -118,55 +70,7 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Tuesday Afternoon Availability: </label>
-                    <input
-                        type="text"
-                        name="tue_aft"
-                        value={tue_aft}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Wednesday Afternoon Availability: </label>
-                    <input
-                        type="text"
-                        name="wed_aft"
-                        value={wed_aft}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Thursday Afternoon Availability: </label>
-                    <input
-                        type="text"
-                        name="thu_aft"
-                        value={thu_aft}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Friday Afternoon Availability: </label>
-                    <input
-                        type="text"
-                        name="fri_aft"
-                        value={fri_aft}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Saturday Afternoon Availability: </label>
-                    <input
-                        type="text"
-                        name="sat_aft"
-                        value={sat_aft}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Sunday Afternoon Availability: </label>
-                    <input
-                        type="text"
-                        name="sun_aft"
-                        value={sun_aft}
-                        onChange={this.onChange}
-                    />
-                    <br />
-                    <label>Monday Evening Availability:</label>
+                    <label>Monday Evening:</label>
                     <input
                         type="text"
                         name="mon_pm"
@@ -174,7 +78,23 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Tuesday Evening Availability:</label>
+                    <label>Tuesday Morning:</label>
+                    <input
+                        type="text"
+                        name="tue_am"
+                        value={tue_am}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Tuesday Afternoon: </label>
+                    <input
+                        type="text"
+                        name="tue_aft"
+                        value={tue_aft}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Tuesday Evening:</label>
                     <input
                         type="text"
                         name="tue_pm"
@@ -182,7 +102,23 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Wednesday Evening Availability:</label>
+                    <label>Wednesday Morning:</label>
+                    <input
+                        type="text"
+                        name="wed_am"
+                        value={wed_am}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Wednesday Afternoon: </label>
+                    <input
+                        type="text"
+                        name="wed_aft"
+                        value={wed_aft}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Wednesday Evening:</label>
                     <input
                         type="text"
                         name="wed_pm"
@@ -190,7 +126,23 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Thursday Evening Availability:</label>
+                    <label>Thursday Morning:</label>
+                    <input
+                        type="text"
+                        name="thu_am"
+                        value={thu_am}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Thursday Afternoon: </label>
+                    <input
+                        type="text"
+                        name="thu_aft"
+                        value={thu_aft}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Thursday Evening:</label>
                     <input
                         type="text"
                         name="thu_pm"
@@ -198,7 +150,23 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Friday Evening Availability:</label>
+                    <label>Friday Morning:</label>
+                    <input
+                        type="text"
+                        name="fri_am"
+                        value={fri_am}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Friday Afternoon: </label>
+                    <input
+                        type="text"
+                        name="fri_aft"
+                        value={fri_aft}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Friday Evening:</label>
                     <input
                         type="text"
                         name="fri_pm"
@@ -206,7 +174,23 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Saturday Evening Availability:</label>
+                    <label>Saturday Morning:</label>
+                    <input
+                        type="text"
+                        name="sat_am"
+                        value={sat_am}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Saturday Afternoon: </label>
+                    <input
+                        type="text"
+                        name="sat_aft"
+                        value={sat_aft}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Saturday Evening:</label>
                     <input
                         type="text"
                         name="sat_pm"
@@ -214,7 +198,23 @@ class WeeklyAvailabilityCreate extends Component {
                         onChange={this.onChange}
                     />
                     <br />
-                    <label>Sunday Evening Availability:</label>
+                    <label>Sunday Morning:</label>
+                    <input
+                        type="text"
+                        name="sun_am"
+                        value={sun_am}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Sunday Afternoon: </label>
+                    <input
+                        type="text"
+                        name="sun_aft"
+                        value={sun_aft}
+                        onChange={this.onChange}
+                    />
+                    <br />
+                    <label>Sunday Evening:</label>
                     <input
                         type="text"
                         name="sun_pm"

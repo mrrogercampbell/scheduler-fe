@@ -47,8 +47,8 @@ class ManagerUpdate extends Component {
         const { full_name, position, photo_url } = this.state.manager
         return (
 
-            <form onSubmit={this.onSubmit}>
-                <h3>Edit Manager Details</h3>
+            <form className='componentStyle' onSubmit={this.onSubmit}>
+                <h2 className='headerStyle formStyle'>Edit Manager Details</h2>
                 <label>Full Name:</label>
                 <input
                     type="text"

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from "react-router-dom";
 import { API_URL } from '../../config/const'
+import './Unavailability.css'
+
+const styles = {
+    textDecoration: 'none'
+}
 
 class UnavailabilityCreate extends Component {
     constructor() {
@@ -33,9 +38,9 @@ class UnavailabilityCreate extends Component {
     render() {
         const { am, aft, pm } = this.state;
         return (
-            <div className='unavailability-create-form'>
-                <h1>Unavailability Request Form:</h1>
-                <form onSubmit={this.onSubmit}>
+            <div className='componentStyle'>
+                <h1 className='headerStyle'>Time Off Request Form:</h1>
+                <form className='itemStyle'onSubmit={this.onSubmit}>
                     <label>Morning Availability:</label>
                     <input
                         type="text"
@@ -61,8 +66,8 @@ class UnavailabilityCreate extends Component {
                     />
                     <button type="submit">Submit</button>
                 </form>
-                <Link to="/unavailability">
-                    <h3 className="nav-link active">View Time Off Requests</h3>
+                <Link className='linkStyle' style={styles} to="/unavailability">
+                    <h3 className="toStyle">View Time Off Requests</h3>
                 </Link>
             </div>
         );

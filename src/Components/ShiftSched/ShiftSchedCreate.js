@@ -46,8 +46,8 @@ class ShiftSchedCreate extends Component {
         let employees = this.state.employees
         console.log(this.state.employees)
         return (
-          <form onSubmit={this.onSubmit}>
-            <h2>Schedule A Shift:</h2>
+          <form className='componentStyle' onSubmit={this.onSubmit}>
+            <h2 className='headerStyle formStyle'>Schedule A Shift:</h2>
             <label>Date:</label>
             <input
               type="Date"

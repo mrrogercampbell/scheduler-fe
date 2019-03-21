@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Navbar className='navbar-style' light  expand="md">
-          <NavbarBrand href="/">Scheduler</NavbarBrand>
+          <NavbarBrand style={{ color: 'rgb(227,118,105)', fontSize: '2em'}}href="/">Scheduler</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar >

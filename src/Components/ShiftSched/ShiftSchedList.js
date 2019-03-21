@@ -3,6 +3,10 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { API_URL } from '../../config/const'
 
+const styles = {
+    textDecoration: 'none'
+}
+
 class ShiftSchedList extends Component {
     constructor(props) {
         super(props)
@@ -59,27 +63,22 @@ class ShiftSchedList extends Component {
                     return cv.full_name
                 }
             })
-            return <h2 className='schedules-schedule' key={i}>
-                <Link to={'/shiftschedule/' + item.id}><p>Date: {item.date}</p></Link>
-                <p>Shift: {item.shift}</p>
-                <p>Open Sections: {item.num_of_sections}</p>
-                <p>Working RED section: {red}</p>
-                <p>Working ORANGE section: {orange}</p>
-                <p>Working YELLOW section: {yellow}</p>
-                <p>Working GREEN section: {green}</p>
-                <p>Working BLUE section: {blue}</p>
-                <p>Working PURPLE section: {purple}</p>
-            </h2>
+            return <div className='itemStyle' key={i}>
+                <Link className='linkStyle' style={styles} to={'/shiftschedule/' + item.id}><h2>Date: {item.date}</h2></Link>
+                <h3>Shift: {item.shift}</h3>
+                <h4>Open Sections: {item.num_of_sections}</h4>
+                <h4>Working RED section: {red}</h4>
+                <h4>Working ORANGE section: {orange}</h4>
+                <h4>Working YELLOW section: {yellow}</h4>
+                <h4>Working GREEN section: {green}</h4>
+                <h4>Working BLUE section: {blue}</h4>
+                <h4>Working PURPLE section: {purple}</h4>
+            </div>
         })
         return (
-            <div>
-                <h1>Shift Schedules:</h1>
+            <div className='componentStyle'>
+                <h2 className='headerStyle'>Shift Schedules <Link className='linkStyle' style={styles} to="/shiftschedule/new">+</Link></h2>
                 {schedules}
-                <button>
-                    <Link to="/shiftschedule/new">
-                        <h3 className="nav-link active">+ Shift</h3>
-                    </Link>
-                </button>
             </div>
         );
     }

@@ -47,8 +47,8 @@ class EmployeeUpdate extends Component {
         const { full_name, position, photo_url, sales, rating } = this.state.employee
         return (
 
-            <form onSubmit={this.onSubmit}>
-                <h3>Edit Employee Details</h3>
+            <form className='componentStyle' onSubmit={this.onSubmit}>
+                <h3 className='headerStyle editStyle'>Edit Team Member Details</h3>
                 <label>Full Name:</label>
                 <input
                     type="text"

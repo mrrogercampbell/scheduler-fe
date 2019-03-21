@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from '../../config/const'
+import './Employee.css'
 
 class EmployeeDetails extends Component {
     constructor(props) {
@@ -43,17 +44,17 @@ class EmployeeDetails extends Component {
         console.log('inside employee details render')
         const { full_name, position, photo_url, sales, rating } = this.state.employee
         return (
-            <div key={this.state.employee.id}>
-                <h1>Name: {full_name}</h1>
-                <h2>Position: {position}</h2>
-                <img src={photo_url} alt={full_name} />
+            <div className='componentStyle' key={this.state.employee.id}>
+                <img className='photoStyle' src={photo_url} alt={full_name} />
+                <h2>Name: {full_name}</h2>
+                <h4>Position: {position}</h4>
                 <p>Sales: {sales}</p>
                 <p>Rating: {rating}</p>
 
-                <Link to={`/employee/edit/${this.state.employee.id}`}>
+                <Link style={{ textDecoration: 'none', color: 'rgb(227,118,105)' }} to={`/employee/edit/${this.state.employee.id}`}>
                     <button value="update" type="update">
                         Update
-                </button>
+                    </button>
                 </Link>
 
                 <button value="delete" type="submit" onClick={this.handleDelete}>Delete</button>

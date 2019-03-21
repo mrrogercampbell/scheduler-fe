@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './Employee.css'
 import { API_URL } from '../../config/const'
+
+const styles = {
+    textDecoration: 'none'
+}
+
 class Employee extends Component {
     state = {
         employees: []
@@ -22,20 +27,17 @@ class Employee extends Component {
     render() {
         const employees = this.state.employees.map(item => {
             return (
-                <div key={item.id}>
-                    <Link to={'employee/' + item.id}> <h1>Employee Name: {item.full_name}</h1></Link>
-                    <p>Position: {item.position}</p>
-                    <p>Photo: <img src={item.photo_url} alt={item.full_name}></img></p>
+                <div className='itemStyle' key={item.id}>
+                    <img className='photoStyle' src={item.photo_url} alt={item.full_name}></img>
+                    <h2>Name: <Link className='linkStyle' style={styles} to={'employee/' + item.id}>{item.full_name}</Link></h2>
+                    <h4>Position: {item.position}</h4>
                 </div>
             )
         })
         return (
-            <div className='employee-container'>
-                <h2>Hello from employees component</h2>
+            <div className='componentStyle'>
+                <h2 className='headerStyle'>ROSTER <Link className='linkStyle' style={styles} to="/employee/new">+</Link></h2>
                 {employees}
-                <Link to="/employee/new">
-                    <h3 className="nav-link active">Add Employee</h3>
-                </Link>
             </div>
         );
     }

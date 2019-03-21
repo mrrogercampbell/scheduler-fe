@@ -3,6 +3,9 @@ import axios from 'axios'
 import { Link } from "react-router-dom";
 import { API_URL } from '../../config/const'
 
+const styles = {
+    textDecoration: 'none'
+}
 
 class Unavailability extends Component {
     state = {
@@ -20,8 +23,8 @@ class Unavailability extends Component {
     render() {
         const unavailability = this.state.unavailability.map(item => {
             return (
-                <div key={item.id}>
-                    <Link to={'/unavailability/' + item.id}><p>Date: {item.date}</p></Link>
+                <div className='itemStyle' key={item.id}>
+                    <Link className='linkStyle' style={styles} to={'/unavailability/' + item.id}><p>Date: {item.date}</p></Link>
                     <p>Employee Number: {item.employee}</p>
                     <ul>
                         <li>Morning: {item.am}</li>
@@ -33,8 +36,8 @@ class Unavailability extends Component {
         })
         return (
 
-            <div className='unavailability-container'>
-                <h2>Hello from Unavailability Component</h2>
+            <div className='componentStyle'>
+                <h2 className='headerStyle'>Time Off Requests</h2>
                 {unavailability}
             </div>
         );
