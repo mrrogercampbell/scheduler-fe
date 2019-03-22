@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import './App.css'
 import Employee from '../Employee/Employee';
 import EmployeeCreate from '../Employee/EmployeeCreate';
@@ -21,7 +21,9 @@ import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 
 import DnDEx from '../DnDEx/DnDEx'
 import DnDRw from '../DnDEx/DnDRw'
-import DnDTest from '../DnDEx/DnDTest/DnDTest'
+// import DnDTest from '../DnDEx/DnDTest/DnDTest'
+
+import MasterDnD from '../MasterDnD/MasterDnD'
 import Home from '../Home'
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
 
@@ -82,6 +84,9 @@ class App extends Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/dndrw">DnD Rework</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/masterdnd">Master DnD</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
@@ -149,12 +154,9 @@ class App extends Component {
             <Route
               exact path="/dndrw" render={routerProps => <DnDRw {...routerProps} />} />
 
-            <AppWrapper>
-              <Container>
-                <DnDTest />
-                <DnDTest />
-              </Container>
-            </AppWrapper>
+            <Route
+              exact path="/masterdnd" render={routerProps => <MasterDnD {...routerProps} />} />
+
           </Switch>
         </main>
       </div>
