@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Img from '../../Images/dinner-plate.png'
 import './DnDEx.css'
 
