@@ -1,56 +1,50 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Link } from "react-router-dom";
 import { API_URL } from '../../config/const'
-import './Unavailability.css'
 
-const styles = {
-    textDecoration: 'none'
-}
-
-class UnavailabilityCreate extends Component {
-    constructor() {
-        super();
+class UnavailabilityUpdate extends Component {
+    constructor(props) {
+        super(props);
         this.state = {
-            employee: '',
-            date: '',
-            am: "",
-            aft: "",
-            pm: "",
-            employees: []
+            unavailability: {}
         };
-        this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
     componentDidMount() {
-        axios.get(API_URL + '/employees').then(
-          (response) => {
-          this.setState({
-            employees: response.data
-          })
-        })
-      }
-    onChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-        console.log(this.state);
-    };
+        axios.get(API_URL + '/unavailability/' + this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    unavailability: res.data
+                })
+                console.log(this.state.unavailability)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+    onChange = (e) => {
+        const state = this.state.unavailability
+        state[e.target.name] = e.target.value;
+        this.setState({ unavailability: state });
+    }
 
-    onSubmit = e => {
+    onSubmit = (e) => {
+        console.log("update submitting")
         e.preventDefault();
-        console.log("Unavailability request has been created");
+        const { employee, date, am, aft, pm } = this.state.unavailability
+        axios.put(API_URL + '/unavailability/' + this.props.match.params.id, { employee, date, am, aft, pm })
+            .then((res) => {
+                console.log(res)
+                this.props.history.push('/unavailability/' + this.props.match.params.id)
+            });
 
-        axios.post(API_URL + "/unavailability", this.state).then(result => {
-            console.log(result)
-            this.props.history.push("/unavailability");
-        });
-    };
-
+    }
     render() {
-        const { employee, date, am, aft, pm } = this.state;
-        let employees = this.state.employees
+        const { employee, date, am, aft, pm } = this.state.unavailability
         return (
             <div className='componentStyle'>
-                <h1 className='headerStyle'>Time Off Request Form:</h1>
+                <h1 className='headerStyle'>Edit Time Off Request:</h1>
                 <form className='itemStyle'onSubmit={this.onSubmit}>
 
                     <label>Team Member:</label>
@@ -93,12 +87,9 @@ class UnavailabilityCreate extends Component {
 
                     <button type="submit">Submit</button>
                 </form>
-                <Link className='linkStyle' style={styles} to="/unavailability">
-                    <h3 className="toStyle">View Time Off Requests</h3>
-                </Link>
             </div>
         );
     }
 }
 
-export default UnavailabilityCreate;
+export default UnavailabilityUpdate;

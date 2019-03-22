@@ -11,4 +11,4 @@ ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
 document.body.style.background = 'rgb(243,248,251)'
 document.body.style.fontFamily="'Work Sans', sans-serif"
 document.body.style.color='rgb(39,81,139)'
-document.body.style.padding='20px'
+document.body.style.padding='50px'
