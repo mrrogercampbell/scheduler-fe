@@ -1,0 +1,42 @@
+.server-holding{
+    border: solid grey 5px;
+    height:90%;
+    position:absolute;
+    left:0;
+    /* top:px; */
+    background: black;
+    color: white;
+    /* z-index: 1001; */
+    /* display: inline-block;
+    height: 200px;
+    width: 50px;
+    padding: 10px;
+    margin: 20px; */
+}
+.one{
+    border: solid black 5px;
+    height: 200px;
+    width: auto;
+    /* left: 20%; */
+    padding: 10px;
+    margin: 20px;
+    margin-left: 175px;
+}
+
+.two{
+    border: solid orange 5px;
+    height: 200px;
+    width: auto;
+    padding: 10px;
+    margin: 20px;
+    margin-left: 175px;
+}
+
+.three{
+    border: solid blue 5px;
+    height: 200px;
+    width: auto;
+    padding: 10px;
+    margin: 20px;
+    margin-left: 175px;
+}

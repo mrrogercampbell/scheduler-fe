@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import './MasterDnD.css'
-import image from '../../Images/dinner-plate.png'
+// import image from '../../Images/dinner-plate.png'
 // import { Link } from "react-router-dom";
 import axios from 'axios'
+import TableSections from '../TableSections/TableSections'
 
 export default class Draggable extends React.Component {
     state = {
@@ -92,27 +93,33 @@ export default class Draggable extends React.Component {
             })
     }
     render() {
-        console.log(this.state.employees)
+        // console.log(this.state.employees)
         const { children } = this.props;
         const { translateX, translateY, isDragging } = this.state;
         let employee = this.state.employees.map(item => {
             return (
                 <div key={item.id}>
-                    <p>Photo: <img src={item.photo_url} alt={item.full_name}></img></p>
+                    <img src={item.photo_url} alt={item.full_name}></img>
                 </div>
             )
         })
         return (
-            <Container
-                onMouseDown={this.handleMouseDown}
-                x={translateX}
-                y={translateY}
-                isDragging={isDragging}
-            >
-                {children}
-                <img src={image} />
-                {employee}
-            </Container>
+            <div>
+                <TableSections />
+                <div>
+                    <Container
+                        onMouseDown={this.handleMouseDown}
+                        x={translateX}
+                        y={translateY}
+                        isDragging={isDragging}
+                        id='1'
+                    >
+                        {children}
+                        {/* <img src={image} /> */}
+                        {employee[0]}
+                    </Container>
+                </div>
+            </div>
         );
     }
 }

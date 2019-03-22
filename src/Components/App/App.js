@@ -155,8 +155,8 @@ class App extends Component {
               exact path="/dndrw" render={routerProps => <DnDRw {...routerProps} />} />
 
             <Route
-              exact path="/masterdnd" render={routerProps => <MasterDnD {...routerProps} />} />
-
+              exact path="/masterdnd" render={routerProps => <MasterDnD {...routerProps} />}
+            />
           </Switch>
         </main>
       </div>
