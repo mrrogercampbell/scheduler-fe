@@ -19,10 +19,6 @@ import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
 
-import DnDEx from '../DnDEx/DnDEx'
-import DnDRw from '../DnDEx/DnDRw'
-// import DnDTest from '../DnDEx/DnDTest/DnDTest'
-
 import MasterDnD from '../MasterDnD/MasterDnD'
 import Home from '../Home'
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
@@ -147,12 +143,6 @@ class App extends Component {
 
             <Route
               exact path="/" render={routerProps => <Home {...routerProps} />} />
-
-            <Route
-              exact path="/dndex" render={routerProps => <DnDEx {...routerProps} />} />
-
-            <Route
-              exact path="/dndrw" render={routerProps => <DnDRw {...routerProps} />} />
 
             <Route
               exact path="/masterdnd" render={routerProps => <MasterDnD {...routerProps} />}

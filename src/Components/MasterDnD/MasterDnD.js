@@ -67,6 +67,14 @@ export default class Draggable extends React.Component {
         window.removeEventListener('mousemove', this.handleMouseMove);
         window.removeEventListener('mouseup', this.handleMouseUp);
 
+        // this.setState((prevState) => {
+        //     // old state
+        //     // set x and y and draggable
+        //     // for one specific index
+        //     // return entire array
+
+        //     return newState
+        // })
         this.setState(
             {
                 originalX: 0,
@@ -106,19 +114,17 @@ export default class Draggable extends React.Component {
         return (
             <div>
                 <TableSections />
-                <div>
-                    <Container
-                        onMouseDown={this.handleMouseDown}
-                        x={translateX}
-                        y={translateY}
-                        isDragging={isDragging}
-                        id='1'
-                    >
-                        {children}
-                        {/* <img src={image} /> */}
-                        {employee[0]}
-                    </Container>
-                </div>
+                <Container
+                    onMouseDown={this.handleMouseDown}
+                    x={translateX}
+                    y={translateY}
+                    isDragging={isDragging}
+                    id='1'
+                >
+                    {/* {children} */}
+                    {/* <img src={image} /> */}
+                    {employee[0]}
+                </Container>
             </div>
         );
     }
