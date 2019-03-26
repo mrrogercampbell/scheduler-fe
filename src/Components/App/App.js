@@ -18,13 +18,27 @@ import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
+import MasterDnD from '../MasterDnD/MasterDnD'
 import Home from '../Home/Home'
-import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink} from 'reactstrap'
+import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
+import styled from 'styled-components'
+
+const AppWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+`
+
+const Container = styled.div`
+`
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      checked: false
+    }
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -59,20 +73,9 @@ class App extends Component {
               <NavItem>
                 <NavLink href="/shiftschedules">Shifts</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="/masterdnd">Demo</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
@@ -132,6 +135,10 @@ class App extends Component {
 
             <Route
               exact path="/" render={routerProps => <Home {...routerProps} />} />
+
+            <Route
+              exact path="/masterdnd" render={routerProps => <MasterDnD {...routerProps} />}
+            />
           </Switch>
         </main>
       </div>
