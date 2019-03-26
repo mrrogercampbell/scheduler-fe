@@ -71,11 +71,12 @@ class App extends Component {
                 <NavLink href="/availability">Availability</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/shiftschedules">Shifts</NavLink>
-              </NavItem>
-              <NavItem>
                 <NavLink href="/masterdnd">Demo</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/shiftschedules">Shifts</NavLink>
+              </NavItem>
+
             </Nav>
           </Collapse>
         </Navbar>
