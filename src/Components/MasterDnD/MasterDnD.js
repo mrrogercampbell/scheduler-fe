@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import './MasterDnD.css'
-// import image from '../../Images/dinner-plate.png'
-// import { Link } from "react-router-dom";
 import axios from 'axios'
 import TableSections from '../TableSections/TableSections'
 
@@ -106,25 +104,30 @@ export default class Draggable extends React.Component {
         const { translateX, translateY, isDragging } = this.state;
         let employee = this.state.employees.map(item => {
             return (
-                <div key={item.id}>
+                <div key={item.id} className='front'>
                     <img src={item.photo_url} alt={item.full_name}></img>
+                    <p>{item.full_name}</p>
                 </div>
             )
         })
         return (
             <div>
-                <TableSections />
                 <Container
                     onMouseDown={this.handleMouseDown}
                     x={translateX}
                     y={translateY}
                     isDragging={isDragging}
                     id='1'
+                    className='containerDemo'
                 >
                     {/* {children} */}
                     {/* <img src={image} /> */}
+                    
                     {employee[0]}
+                    
                 </Container>
+                <TableSections/>
+                
             </div>
         );
     }

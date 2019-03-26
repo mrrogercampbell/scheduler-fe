@@ -1,8 +1,9 @@
 .server-holding{
     border: solid grey 5px;
-    height:90%;
-    position:absolute;
+    height:100%;
+    position: absolute;
     left:0;
+    /* z-index: -1; */
     /* top:px; */
     background: black;
     color: white;
