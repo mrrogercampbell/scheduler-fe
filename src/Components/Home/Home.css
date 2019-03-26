@@ -1,0 +1,17 @@
+.homeStyle {
+    text-align: center;
+    margin-top: 10%;
+}
+
+.homeStyle h2 {
+    margin-top: 5%;
+}
+
+.homeStyle h3 {
+    margin-top: 3%;
+    text-decoration: none;
+}
+
+.linkStyle {
+    color: rgb(227,118,105);
+}

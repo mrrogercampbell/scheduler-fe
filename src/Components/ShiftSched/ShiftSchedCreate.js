@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { API_URL } from '../../config/const'
 
 class ShiftSchedCreate extends Component {
     constructor() {
@@ -20,8 +21,7 @@ class ShiftSchedCreate extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     componentDidMount() {
-      // axios.get('http://localhost:8000/api/employees').then(
-      axios.get('https://scheduler-be-1.herokuapp.com/api/employees').then(
+      axios.get(API_URL + '/employees').then(
         (response) => {
         this.setState({
           employees: response.data
@@ -35,8 +35,7 @@ class ShiftSchedCreate extends Component {
 
     onSubmit = e => {
         e.preventDefault()
-        // axios.post("http://localhost:8000/api/schedulebyshifts", this.state).then(result => {
-        axios.post("https://scheduler-be-1.herokuapp.com/api/schedulebyshifts", this.state).then(result => {
+        axios.post(API_URL + "/schedulebyshifts", this.state).then(result => {
             console.log(result);
             this.props.history.push("/shiftschedules");
         });
@@ -47,8 +46,8 @@ class ShiftSchedCreate extends Component {
         let employees = this.state.employees
         console.log(this.state.employees)
         return (
-          <form onSubmit={this.onSubmit}>
-            <h2>Schedule A Shift:</h2>
+          <form className='componentStyle' onSubmit={this.onSubmit}>
+            <h2 className='headerStyle formStyle'>Schedule A Shift:</h2>
             <label>Date:</label>
             <input
               type="Date"

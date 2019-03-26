@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from '../../config/const'
 
 class UnavailabilityDetail extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class UnavailabilityDetail extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://scheduler-be-1.herokuapp.com/api/unavailability/' + this.props.match.params.id)
+        axios.get(API_URL + '/unavailability/' + this.props.match.params.id)
             .then((res) => {
                 this.setState({
                     unavailability: res.data
@@ -25,8 +26,7 @@ class UnavailabilityDetail extends Component {
 
     handleDelete = e => {
         e.preventDefault();
-        // throwing 403 - forbidden
-        axios.delete('https://scheduler-be-1.herokuapp.com/api/unavailability/' + this.props.match.params.id)
+        axios.delete(API_URL + '/unavailability/' + this.props.match.params.id)
             .then((res) => {
                 console.log(res.data)
                 this.setState({
@@ -43,7 +43,7 @@ class UnavailabilityDetail extends Component {
         console.log('inside unavailability details render')
         const { date, am, aft, pm } = this.state.unavailability
         return (
-            <div key={this.state.unavailability.id}>
+            <div className='componentStyle' key={this.state.unavailability.id}>
                 <h1>Date: {date}</h1>
                 <p>Morning Availability: {am}</p>
                 <p>Afternoon Availability: {aft}</p>
@@ -52,7 +52,7 @@ class UnavailabilityDetail extends Component {
                 <Link to={`/unavailability/edit/${this.state.unavailability.id}`}>
                     <button value="update" type="update">
                         Update
-                </button>
+                    </button>
                 </Link>
 
                 <button value="delete" type="submit" onClick={this.handleDelete}>Delete</button>

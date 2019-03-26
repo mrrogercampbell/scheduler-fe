@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { API_URL } from '../../config/const'
 
 class EmployeeCreate extends Component {
     constructor() {
@@ -22,8 +23,7 @@ class EmployeeCreate extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        // axios.post("http://localhost:8000/api/employees", 
-        axios.post("https://scheduler-be-1.herokuapp.com/api/employees", 
+        axios.post(API_URL + "/employees", 
             this.state).then(result => {
             console.log(result)
             console.log("Employee has been created");
@@ -36,8 +36,8 @@ class EmployeeCreate extends Component {
     render() {
         const { full_name, position, photo_url, sales, rating } = this.state;
         return (
-            <div className='employee-create-form'>
-                <h1>New Employee Form:</h1>
+            <div className='componentStyle'>
+                <h2 className='headerStyle formStyle'>Add Team Member</h2>
                 <form onSubmit={this.onSubmit}>
                     <label>Full Name:</label>
                     <input

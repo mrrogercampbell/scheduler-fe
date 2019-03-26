@@ -1,3 +1,22 @@
-a:hover {
-    color: rgb(227,118,105)
-  }
+.componentStyle {
+  margin-top: 70px;
+}
+
+.headerStyle {
+  text-align: center;
+}
+
+.itemStyle {
+  margin-top: 100px;
+}
+
+.photoStyle {
+  max-height: 200px;
+  max-width: 200px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.formStyle {
+  margin-bottom: 80px;
+}

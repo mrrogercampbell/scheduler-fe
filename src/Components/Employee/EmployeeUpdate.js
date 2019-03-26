@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { API_URL } from '../../config/const'
 
 class EmployeeUpdate extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class EmployeeUpdate extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://scheduler-be-1.herokuapp.com/api/employee/' + this.props.match.params.id)
+        axios.get(API_URL + '/employee/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     employee: res.data
@@ -34,8 +35,7 @@ class EmployeeUpdate extends Component {
         console.log("update submitting")
         e.preventDefault();
         const { full_name, position, photo_url, sales, rating } = this.state.employee
-        // put request throwing 403 - forbidden
-        axios.put('https://scheduler-be-1.herokuapp.com/api/employee/' + this.props.match.params.id, { full_name, position, photo_url, sales, rating })
+        axios.put(API_URL + '/employee/' + this.props.match.params.id, { full_name, position, photo_url, sales, rating })
             .then((res) => {
                 console.log(res)
                 this.props.history.push('/employee/' + this.props.match.params.id)
@@ -47,8 +47,8 @@ class EmployeeUpdate extends Component {
         const { full_name, position, photo_url, sales, rating } = this.state.employee
         return (
 
-            <form onSubmit={this.onSubmit}>
-                <h3>Edit Employee Details</h3>
+            <form className='componentStyle' onSubmit={this.onSubmit}>
+                <h3 className='headerStyle editStyle'>Edit Team Member Details</h3>
                 <label>Full Name:</label>
                 <input
                     type="text"

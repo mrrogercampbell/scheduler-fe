@@ -1,27 +1,7 @@
-body {
-  background-color: rgb(168,213,218);
-  color: rgb(40,49,84);
-  text-align: center;
+.brandStyle {
+    color: rgb(227,118,105);
 }
 
-a {
-  color: rgb(40,49,84);
-  text-decoration: none;
-}
-
-nav {
-  overflow: hidden;
-}
-
-nav a {
-  color: rgb(40,49,84);
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.nav a:hover {
-  color: rgb(227,118,105)
+.App {
+    color: rgb(39,81,139);
 }

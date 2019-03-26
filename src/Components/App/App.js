@@ -18,11 +18,9 @@ import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
-
 import MasterDnD from '../MasterDnD/MasterDnD'
-import Home from '../Home'
+import Home from '../Home/Home'
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
-
 import styled from 'styled-components'
 
 const AppWrapper = styled.div`
@@ -55,12 +53,12 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Scheduler</NavbarBrand>
+        <Navbar className='navbar-style' light  expand="md">
+          <NavbarBrand style={{ color: 'rgb(227,118,105)', fontSize: '2em'}}href="/">Scheduler</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
+            <Nav className="ml-auto" navbar >
+              <NavItem className='navitem-style'>
                 <NavLink href="/employees">Roster</NavLink>
               </NavItem>
               <NavItem>
@@ -76,13 +74,7 @@ class App extends Component {
                 <NavLink href="/shiftschedules">Shifts</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/dndex">DnD Example</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/dndrw">DnD Rework</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/masterdnd">Master DnD</NavLink>
+                <NavLink href="/masterdnd">Demo</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
