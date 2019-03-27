@@ -2,13 +2,14 @@
     border: red solid 5px;
 }
 
-img {
+.photoStyle1 {
     width: 100px;
+    /* max-height: 200px; */
+    /* max-width: 200px; */
+    border-radius: 50%;
+    margin-bottom: 25px;
 }
 
 .containerDemo {
-    max-height: 200px;
-    max-width: 200px;
-    border-radius: 50%;
-    margin-bottom: 25px;
+    z-index: 100;
 }

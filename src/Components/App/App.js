@@ -18,7 +18,8 @@ import ShiftSchedCreate from '../ShiftSched/ShiftSchedCreate'
 import ShiftSchedList from '../ShiftSched/ShiftSchedList';
 import ShiftSchedUpdate from '../ShiftSched/ShiftSchedUpdate'
 import ShiftSchedDetail from '../ShiftSched/ShiftSchedDetail'
-import MasterDnD from '../MasterDnD/MasterDnD'
+// import MasterDnD from '../MasterDnD/MasterDnD'
+import DnDParent from '../DnDParent/DnDParent'
 import Home from '../Home/Home'
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, UncontrolledDropdown, DropdownMenu, DropdownItem, NavItem, NavLink } from 'reactstrap'
 import styled from 'styled-components'
@@ -53,8 +54,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Navbar className='navbar-style' light  expand="md">
-          <NavbarBrand style={{ color: 'rgb(227,118,105)', fontSize: '2em'}}href="/">Scheduler</NavbarBrand>
+        <Navbar className='navbar-style' light expand="md">
+          <NavbarBrand style={{ color: 'rgb(227,118,105)', fontSize: '2em' }} href="/">Scheduler</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar >
@@ -138,7 +139,7 @@ class App extends Component {
               exact path="/" render={routerProps => <Home {...routerProps} />} />
 
             <Route
-              exact path="/masterdnd" render={routerProps => <MasterDnD {...routerProps} />}
+              exact path="/masterdnd" render={routerProps => <DnDParent {...routerProps} />}
             />
           </Switch>
         </main>

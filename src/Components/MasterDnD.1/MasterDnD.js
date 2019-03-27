@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import './MasterDnD.css'
 import axios from 'axios'
 
+
 export default class Draggable extends React.Component {
     state = {
         isDragging: false,
@@ -122,7 +123,7 @@ export default class Draggable extends React.Component {
                     {/* {children} */}
                     {/* <img src={image} /> */}
 
-                    {employee[0]}
+                    {employee[1]}
 
                 </Container>
 

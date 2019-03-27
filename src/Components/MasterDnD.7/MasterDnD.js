@@ -122,7 +122,7 @@ export default class Draggable extends React.Component {
                     {/* {children} */}
                     {/* <img src={image} /> */}
 
-                    {employee[0]}
+                    {employee[5]}
 
                 </Container>
 
