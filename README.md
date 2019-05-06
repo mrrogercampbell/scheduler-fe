@@ -7,34 +7,34 @@ Add screenshots
 ## Features Planned with Current Status
 * Bronze (MVP)
   * Achieve CRUD functionality in at least one model
-    * Status: Acheived
+    * Status: Achieved
   * Deploy (Heroku/Surge)
-    * Status: Partially Acheived
+    * Status: Partially Achieved
       * Back-End is deployed and migrated to Heroku, but is not yet rendering - still troubleshooting
       * Front-End is not rendering - still troubleshooting
   * Styling applied throughout the app
-    * Status: Acheived
+    * Status: Achieved
 * Silver
   * Ensure all models are fully functional
-    * Status: Partially Acheived
+    * Status: Partially Achieved
   * Programmed to calculate availability
-    * Status: To Acheive
+    * Status: To Achieve
       * Unable to attempt - time constraint
   * Responsive design - displays on all screen sizes
-    * Status: To Acheive in future
+    * Status: To Achieve in future
       * Unable to attempt - time constraint
   * Authentication - users sign in/out, restrict features for authenticated users, render the current user's profile
-    * Status: To Acheive in future
+    * Status: To Achieve in future
       * Unable to attempt - time constraint
 * Gold
   * Style according to UX consultant's recommendations
-    * Status: To Acheive
+    * Status: To Achieve
       * Unable to attempt - time constraint
   * Incorporate icons to represent sections, tables, chairs, etc.
-    * Status: To Acheive
+    * Status: To Achieve
       * Unable to attempt - time constraint
   * Incorporate Drag and Drop Feature
-    * Status: Partially Acheived
+    * Status: Partially Achieved
       * Code partially written, unable to complete due to time constraint
 ## List of Technologies Used
 * Django
